@@ -149,6 +149,7 @@ table {
 
 td {
   vertical-align: top;
+  width: auto;
 }
 
 .pro-cv-left {
@@ -178,4 +179,8 @@ td {
     -moz-transition: width 0.3s ease, margin 0.3s ease;
     -o-transition: width 0.3s ease, margin 0.3s ease;
     transition: width 0.3s ease, margin 0.3s ease;
+}
+
+.stars-cell {
+  width: 25px;
 }
