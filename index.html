@@ -68,17 +68,19 @@
 
 <body>
 
-	<div class="home-wrapper">
-		<div class="home-background">
-			<h1>choose what version of me you want to know</h1>
-		</div>
+	<div class="container-fluid ">
+		<div class="home-wrapper row">
+			<div class="home-programmer col-md-3">
+				<h1><a href='professional.html'>sharepoint | asp.net | web developer</a></h1>
+			</div>
 
-		<div class="home-programmer">
-			<h1><a href='professional.html'>sharepoint | asp.net | web developer</a></h1>
-		</div>
+			<div class="home-background col-md-6">
+				<h1>choose what version of me you want to know</h1>
+			</div>
 
-		<div class="home-musician">
-			<h1>clarinet student, player and concert master</h1>
+			<div class="home-musician col-md-3">
+				<h1>clarinet student, player and concert master</h1>
+			</div>
 		</div>
 	</div>
 
@@ -93,10 +95,12 @@
 		$(function(){
 			$('.home-programmer, .home-musician').hover(function(){
 				// in
-				$( this ).animate({width: "50%"}, 500);
+				$( this ).toggleClass('col-md-3 col-md-6');
+				$('.home-background').toggleClass('col-md-6 col-md-3');
 			}, function() {
 				// out
-				$( this ).animate({width: "20%"}, 500);
+				$( this ).toggleClass('col-md-3 col-md-6');
+				$('.home-background').toggleClass('col-md-6 col-md-3');
 			});
 		});
 	</script>
