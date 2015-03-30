@@ -71,7 +71,6 @@ html, body {
     width: 100vw;
     height: 100vh;
     color: #fff;
-    background-image: url('img/home-background.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -102,6 +101,9 @@ html, body {
 }
 .home-musician {
     background-image: url('img/clarinet.jpg');
+}
+.home-background {
+  background-image: url('img/home-background.jpg');
 }
 
 /* Small devices (tablets, 768px and up) */
