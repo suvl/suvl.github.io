@@ -104,33 +104,12 @@ html, body, #wrapper {
 }
 
 .home-programmer {
-    
-}
-div.home-programmer::after {
-  content: "";
-  background-image: url('img/professional.jpg');
-  opacity: 0.8;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
+    background-image: url('img/professional.png');
 }
 
+
 .home-musician {
-    
-}
-div.home-musician::after {
-  content: "";
-  background-image: url('img/clarinet.jpg');
-  opacity: 0.8;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
+    background-image: url('img/clarinet.png');
 }
 
 .home-background {
