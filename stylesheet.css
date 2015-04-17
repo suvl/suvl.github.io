@@ -59,15 +59,21 @@
     font-family: 'texgyreheros';
 }
 
-html, body {
+html, body, #wrapper {
     width: 100wv;
     height: 100hv;
     margin: 0;
     padding: 0;
 }
 
+body {
+    background-image: url(img/home-background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: #eee;
+}
+
 .home-wrapper {
-    background-color: #000;
     width: 100vw;
     height: 100vh;
     color: #fff;
@@ -75,7 +81,7 @@ html, body {
     background-position: center;
 }
 
-.home-background h1, .home-programmer h1, .home-musician h1 {
+.home-background h1, .home-programmer h1, .home-musician h1, .home-musician h4 {
     position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -91,19 +97,45 @@ html, body {
 
 .home-programmer, .home-musician, .home-background {
     height: 100%;
-    background-color: #333;
+    background-color: transparent;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat no-repeat;
 }
 
 .home-programmer {
-    background-image: url('img/professional.jpg');
+    
 }
+div.home-programmer::after {
+  content: "";
+  background-image: url('img/professional.jpg');
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
 .home-musician {
-    background-image: url('img/clarinet.jpg');
+    
 }
+div.home-musician::after {
+  content: "";
+  background-image: url('img/clarinet.jpg');
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
 .home-background {
-  background-image: url('img/home-background.jpg');
+  /*background-image: url('img/home-background.jpg');*/
+  background-color: transparent;
 }
 
 /* Small devices (tablets, 768px and up) */
