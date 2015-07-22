@@ -45,6 +45,7 @@
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href='stylesheet.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" media="print" href="print.css">
 
     
     <!-- all our JS is at the bottom of the page, except for Modernizr. -->
@@ -67,7 +68,7 @@
 
 <body>
 
-    <div class="container">
+    <div class="container" id="cv">
         <div class="row">
             <div class="pro-header">
                 <h1>joao<strong>trigo</strong>soares</h1>
@@ -290,9 +291,10 @@
             </div>
             
         </div>
-        <!--<div class="download text-center">
-            <a href="joaotrigosoares.pdf" class="btn btn-primary btn-lg">I want to take this with me</a>
-        </div>-->
+        <div class="download text-center">
+            <!--<a href="joaotrigosoares.pdf" class="btn btn-primary btn-lg">I want to take this with me</a>-->
+            <a href="#" onclick="return xepOnline.Formatter.Format('cv',{pageWidth:'216mm', pageHeight:'279mm'});" class="btn btn-primary btn-lg">I want to take this with me</a>
+        </div>
         <div class="pro-footer">
             
         </div>
@@ -304,10 +306,7 @@
 
     <!-- this is where we put our custom functions -->
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <!--<script type="text/javascript" src="js/functions-home.js"></script>-->
-    <script type="text/javascript">
-        
-    </script>
+    <script src="js/xepOnline.jqPlugin.js"></script>
   
 </body>
 </html>
