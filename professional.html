@@ -293,7 +293,7 @@
         </div>
         <div class="download text-center">
             <!--<a href="joaotrigosoares.pdf" class="btn btn-primary btn-lg">I want to take this with me</a>-->
-            <a href="#" onclick="return xepOnline.Formatter.Format('cv',{pageWidth:'216mm', pageHeight:'279mm'});" class="btn btn-primary btn-lg">I want to take this with me</a>
+            <a href="#" onclick="fromHTML();" class="btn btn-primary btn-lg">I want to take this with me</a>
         </div>
         <div class="pro-footer">
             
@@ -306,7 +306,38 @@
 
     <!-- this is where we put our custom functions -->
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="js/xepOnline.jqPlugin.js"></script>
+    <script src="js/jspdf.min.js"></script>
+    <script type="text/javascript">
+    
+        function fromHTML() {
+            var pdf = new jsPDF('p', 'in', 'a4');
+            // source can be HTML-formatted string, or a reference
+            // to an actual DOM element from which the text will be scraped.
+            var source = $('#cv').get(0);
+            console.log(source);
+            
+            var specialElementHandlers = {
+                 '#bypassme': function(element, renderer) {
+                     return true;
+                 }
+             };
+        
+            // all coords and widths are in jsPDF instance's declared units
+            // 'inches' in this case
+            pdf.fromHTML(
+                source,
+                0.5,
+                0.5,
+                {
+                    'width': 7,
+                    'elementHandlers': specialElementHandlers
+                }
+            );
+        
+            pdf.save('joaotrigosoares.pdf');
+    }
+    
+    </script>
   
 </body>
 </html>
