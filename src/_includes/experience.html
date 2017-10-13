@@ -4,7 +4,7 @@
                 <div class="item">
                     <div class="meta">
                         <div class="upper-row">
-                            <h3 class="job-title">DevOps Developer &amp; Product Owner</h3>
+                            <h3 class="job-title">DevOps &amp; Product Owner</h3>
                             <div class="time">2015 - Present</div>
                         </div><!--//upper-row-->
                         <div class="company">
@@ -19,6 +19,22 @@
                         <p>My responsibilities are within the services for Eletronic Programming Guide (EPG), Video On Demand (VOD) catalogs, purchases (channels, channel packages, VOD contents, account management), social networks on TV (YouTube, Facebook), profile management ("netflix-like" profiles), and the very large Network PVR and Event Timewarp.</p>
 
                         <p>On the R&amp;D field, we as a team are making efforts for integrating Speech-To-Text and Natural Language Processing providers to create features of voice control for the existing products. We are also advancing towards automated customer care and personal assistant services while investigating bot-based approaches.</p>
+
+                        <p>If you're wondering where the DevOps claim come from, this is our typical process:</p>
+                        <ul>
+                            <li>Document the architecture with the relevant teams (write on Confluence)</li>
+                            <li>Translate architecture and requirements into actionable tickets, associated wih a release, maybe some Epic, maybe linked between each other</li>
+                            <li>Analyse, prioritise and backlog those tickets</li>
+                            <li>Raise the necessary people to work on that release</li>
+                            <li>Go back and forth with that ticket in the workflow (dev->test->dev->test->pass)</li>
+                            <li>Commit to git always referencing at least one of those tickets</li>
+                            <li>Automated builds are always triggered with every commit, whereas <em>dev</em> and <em>master</em> have a lot more build tasks associated</li>
+                            <li>When a build is good enough for integration with other teams, launch a release at VSTS</li>
+                            <li>The VSTS takes care of installing the build on the dev servers, then run the integrated, load and regression tests</li>
+                            <li>If that build is really good enough for integration, promote it to staging, again, with all the tests</li>
+                            <li>After a gracious period and no complains from the other teams, promote that build to stable, with all the tests once again</li>
+                            <li>When the build has all the tickets associated with that release and has had an enough time at the stable environment, promote it to production and let the prod team decide the best time to schedule and install the build.</li>
+                            <li>In case of any failure, just rollback to the previous release</li>
                     </div><!--//details-->
                 </div><!--//item-->
                 
