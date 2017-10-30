@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/suvl
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://jtsoar.es
+  * I am suvl (https://keybase.io/suvl) on keybase.
+  * I have a public key ASAq_VpOEgHF7_UXLEZrgwtmyAU2A79X_KnnB0H-qcVJxAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012091235eae83359afedc89c779d20166d94b4397435bfe2dc5c367214378c7adc10a",
+      "host": "keybase.io",
+      "kid": "01202afd5a4e1201c5eff5172c466b830b66c8053603bf57fca9e70741fea9c549c40a",
+      "uid": "8c7082b73b191d789d8c2897f6a5f519",
+      "username": "suvl"
+    },
+    "merkle_root": {
+      "ctime": 1509362085,
+      "hash": "a72e9b20755542d70bb0e5ee77d1f295f64732c1897548ddb4e05ed680f4a7a0f5ebe3433aa468f839a686f769ee50cb5be4bf77e3b1146ec0fdd61f19c4843f",
+      "hash_meta": "250194cfba2e0cd806611099a22d55927b4d818d46a86b8467436c68b20108fd",
+      "seqno": 1646050
+    },
+    "service": {
+      "hostname": "jtsoar.es",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.34"
+  },
+  "ctime": 1509362155,
+  "expire_in": 504576000,
+  "prev": "f0022e7f24a62669f2bc9c26821e27272a68cc2ad34c50c3fd46cc20903aafc5",
+  "seqno": 16,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgKv1aThIBxe/1FyxGa4MLZsgFNgO/V/yp5wdB/qnFScQKp3BheWxvYWTFAz17ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwOTEyMzVlYWU4MzM1OWFmZWRjODljNzc5ZDIwMTY2ZDk0YjQzOTc0MzViZmUyZGM1YzM2NzIxNDM3OGM3YWRjMTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMmFmZDVhNGUxMjAxYzVlZmY1MTcyYzQ2NmI4MzBiNjZjODA1MzYwM2JmNTdmY2E5ZTcwNzQxZmVhOWM1NDljNDBhIiwidWlkIjoiOGM3MDgyYjczYjE5MWQ3ODlkOGMyODk3ZjZhNWY1MTkiLCJ1c2VybmFtZSI6InN1dmwifSwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE1MDkzNjIwODUsImhhc2giOiJhNzJlOWIyMDc1NTU0MmQ3MGJiMGU1ZWU3N2QxZjI5NWY2NDczMmMxODk3NTQ4ZGRiNGUwNWVkNjgwZjRhN2EwZjVlYmUzNDMzYWE0NjhmODM5YTY4NmY3NjllZTUwY2I1YmU0YmY3N2UzYjExNDZlYzBmZGQ2MWYxOWM0ODQzZiIsImhhc2hfbWV0YSI6IjI1MDE5NGNmYmEyZTBjZDgwNjYxMTA5OWEyMmQ1NTkyN2I0ZDgxOGQ0NmE4NmI4NDY3NDM2YzY4YjIwMTA4ZmQiLCJzZXFubyI6MTY0NjA1MH0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJqdHNvYXIuZXMiLCJwcm90b2NvbCI6Imh0dHA6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjM0In0sImN0aW1lIjoxNTA5MzYyMTU1LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwicHJldiI6ImYwMDIyZTdmMjRhNjI2NjlmMmJjOWMyNjgyMWUyNzI3MmE2OGNjMmFkMzRjNTBjM2ZkNDZjYzIwOTAzYWFmYzUiLCJzZXFubyI6MTYsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAUahugXRx6/MqxKbjdvsNG5hI82+nJ4vumVdBZ/LcTo2VvWQz8d+ZOeX/K2oBRALzpmyw53Ghhq6xxeuwjn1KDahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIFvPQuw+lNq5Fan+vlQuuEUZSPTPtdN2qspHSVjSA1MQo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/suvl
+
+==================================================================
