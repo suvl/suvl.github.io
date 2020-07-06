@@ -2,9 +2,11 @@
 
 baseURL = "https://jtsoar.es"
 languageCode = "en"
-title = ""
+title = "Resume for João Trigo Soares"
 theme = "hugo-devresume-theme"
 googleAnalytics = "UA-61989966-1"
+
+publishDir = "../"
 
 [params]
     author = "suvl"
