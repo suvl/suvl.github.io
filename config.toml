@@ -1,0 +1,319 @@
+# Page settings
+
+baseURL = "https://jtsoar.es"
+languageCode = "en"
+title = ""
+theme = "hugo-devresume-theme"
+googleAnalytics = "UA-61989966-1"
+
+[params]
+    author = "suvl"
+    description = "Resume for João Trigo Soares"
+
+    primaryColor = "#546db6"
+    textPrimaryColor = "#292929"
+
+
+    [params.profile]
+        enable = true
+        name = "João Trigo Soares"
+        tagline = "DevOps Engineer"
+        avatar = "avatar.jpg"
+
+
+    [params.contact]
+        enable = true
+        location = "Lisbon, Portugal"
+
+        [[params.contact.list]]
+        icon = "fas fa-envelope-square"
+        url = "mailto:joao@jtsoar.es"
+        text = "joao@jtsoar.es"
+        [[params.contact.list]]
+        icon = "fas fa-globe"
+        url = "jtsoar.es"
+        text = "jtsoar.es"
+
+
+
+
+
+    [params.skills]
+        enable = true
+
+        [[params.skills.list]]
+        title = "Technical"
+        [[params.skills.list.items]]
+        details = "[Kubernetes](https://github.com/kubernetes/community) from 1.11 to latest stable"
+        [[params.skills.list.items]]
+        details = "Kubernetes Engines: [Rancher](https://rancher.com/), [GKE](https://cloud.google.com/kubernetes-engine), [AKS](https://azure.microsoft.com/en-gb/services/kubernetes-service/)"
+        [[params.skills.list.items]]
+        details = "[CRI](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md): Docker, containerd, CRI-O, (podman)"
+        [[params.skills.list.items]]
+        details = "[SMI](https://smi-spec.io/): istio"
+        [[params.skills.list.items]]
+        details = "[CNI](https://github.com/containernetworking/cni): Calico"
+        [[params.skills.list.items]]
+        details = "CI/CD: Jenkins and Azure DevOps"
+        [[params.skills.list.items]]
+        details = "Linux administration: ubuntu server, rancherOS, CentOS, debian"
+        [[params.skills.list.items]]
+        details = "Security: PKI, Active Directory, IAM"
+        [[params.skills.list.items]]
+        details = "Clouds: Azure, Google Cloud Platform, civo, Digitalocean, OVH"
+        [[params.skills.list.items]]
+        details = "DBs/KV: MongoDB, SQL Server, Redis, etcd"
+        [[params.skills.list.items]]
+        details = "Distributed Storage: [Ceph](https://ceph.io/) (block, object, filesystem)"
+        [[params.skills.list.items]]
+        details = "Windows server 2008/2012/2016"
+        [[params.skills.list.items]]
+        details = "Object-oriented: C#, Golang"
+        [[params.skills.list.items]]
+        details = "(Web) frameworks: ASP.NET, .NET framework, .NET core"
+        [[params.skills.list.items]]
+        details = "Design and implement distributed software"
+        [[params.skills.list.items]]
+        details = "Lead and deliver complex software systems"
+        [[params.skills.list.items]]
+        details = "Some frontend capabilities that are rusty but present"
+
+        [[params.skills.list]]
+        title = "Professional"
+        [[params.skills.list.items]]
+        details = "Effective communication"
+        [[params.skills.list.items]]
+        details = "Team player"
+        [[params.skills.list.items]]
+        details = "Strong problem solver"
+        [[params.skills.list.items]]
+        details = "Good time management"
+
+
+
+
+
+
+
+
+    [params.education]
+        enable = true
+
+        [[params.education.list]]
+        degree = "MSc in Computer Science"
+        university = "Faculty of Engineering - University of Porto"
+        dates = "2009 - 2011"
+        [[params.education.list]]
+        degree = "BSc in Engineering Sciences"
+        university = "Faculty of Engineering - University of Porto"
+        dates = "2006 - 2009"
+
+
+
+
+
+
+
+
+    [params.awards]
+        enable = false
+
+        [[params.awards.list]]
+        name = "Award Lorem Ipsum"
+        body = "Microsoft lorem ipsum"
+        date = "2019"
+        [[params.awards.list]]
+        name = "Award Donec Sodales"
+        body = "Oracle Aenean"
+        date = "2017"
+
+
+
+
+
+
+
+
+    [params.languages]
+        enable = true
+
+        [[params.languages.list]]
+        name = "Portuguese"
+        level = "Native"
+        [[params.languages.list]]
+        name = "English"
+        level = "Professional"
+
+
+    [params.interests]
+        enable = true
+
+        [[params.interests.list]]
+        name = "3D printing"
+        [[params.interests.list]]
+        name = "IoT and electronicals"
+        [[params.interests.list]]
+        name = "Trekking"
+        [[params.interests.list]]
+        name = "Photography"
+        [[params.interests.list]]
+        name = "Travelling"
+        [[params.interests.list]]
+        name = "Classical Music"
+
+
+    [params.summary]
+        enable = true
+        text = """I've started my carreer as an IT consultant at Accenture, working for the Resources business (electricity, petrol). I've dedicated four years to 
+            helping that companies with digital transformations and paperless workflows. My work was around Windows and ASP.NET software, namely Sharepoint and Windows Server. \
+            I was promoted up to the role of Senior Developer.\
+            \n\n\
+            After that I started as a backend developer on one of the biggest telcos in Portugal. There I've helped implement scalable solutions to support the \
+            TV multimedia business. Notable works include backends for user profiles and preferences, work in the cloud-based \
+            [Personal View Recorder](https://en.wikipedia.org/wiki/Digital_video_recorder) engine, a new Auto Configuration System \
+            based on the [XMiDT](https://comcast.github.io/#xmidt-projects) stack, and a new [Automatic Speech Recognition](https://en.wikipedia.org/wiki/Automatic_speech_recognition) \
+            system using Azure's LUIS apis. I got up to Lead Developer.\
+            \n\n\
+            When the need for moving to the cloud and DevOps transformation arised I was called upon changing roles and started my current position as a DevOps Engineer. I'm contributing to \
+            DevOps changes like adopting containerization, CI/CD, GitOps, automation (e.g. infrastructure-as-code, jmeter tests), hybrid infrastructure (on prem + cloud), distributed storage, \
+            monitoring and self-healing systems.\n\nI'm enroled to the CKA exam and plan to get certified this year."""
+
+
+
+
+
+
+
+    [params.experience]
+        enable = true
+
+        [[params.experience.list]]
+        title = "Senior Software Engineer"
+        dates = "2019 - Present"
+        company = "Google"
+        details = "Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis."
+        [[params.experience.list.items]]
+        details = "Lorem ipsum dolor sit amet, consectetuer."
+        [[params.experience.list.items]]
+        details = "Aenean commodo ligula eget dolor."
+        [[params.experience.list.items]]
+        details = "Etiam ultricies nisi vel augue."
+
+        [[params.experience.list]]
+        title = "Lead Software Developer"
+        dates = "2016 - 2019"
+        company = "Apple"
+        details = "Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel."
+        [[params.experience.list.items]]
+        details = "Lorem ipsum dolor sit amet, consectetuer."
+        [[params.experience.list.items]]
+        details = "Aenean commodo ligula eget dolor."
+
+        [[params.experience.list]]
+        title = "Senior Software Developer"
+        dates = "2014 - 2016"
+        company = "Dropbox"
+        details = "Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+
+        [[params.experience.list]]
+        title = "Senior Developer"
+        dates = "2013 - 2014"
+        company = "Uber"
+        details = "Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus."
+
+        [[params.experience.list]]
+        title = "Software Engineer"
+        dates = "2011 - 2015"
+        company = "Accenture Technology Solutions"
+        details = """This was my first job, and as I had C# experience from college I was assigned to that unit inside the Lisbon Delivery Center. I was then allocated to the SharePoint team.
+
+There I was involved in developing diverse SharePoint solutions, for intranet and public portals. The biggest being the EDP intranet, awarded with the Europe's best at the 2013 Digital Communication Awards (reference). That project involved scaling for 12k employees using it for booking vehicles, using team sites, managing schedules and vacation days, receiving company news, whatnot.
+
+Other projects were smaller, for energy and telecom clients. One project I'd like to highlight was related to the POS systems of all stores of a major telecom provider. The company had bought highly advanced terminals but those were misused just for simple payments. That project integrated their billing and store front systems to take advantage of paperless signatures, integrated payment receipts and advanced reporting features."""
+
+        [[params.experience.list]]
+        title = "Researcher"
+        dates = "2010 - 2011"
+        company = "INESC TEC"
+        details = """I integrated the Computer Vision team while developing my master's thesis. My project intended to reconstruct rough 3D models from freely taken pictures. \
+        It was a sub-project of a bigger effort from the team \to consistently measure the resulting effects of mastectomy interventions. The results would contribute to find \
+        and develop methods where the aesthetic impact was minimized while the change of success was higher.\n\nCheck the thesis [here](https://repositorio-aberto.up.pt/handle/10216/63333)."""
+
+
+
+
+
+
+
+
+
+
+
+    [params.projects]
+        enable = true
+
+        [[params.projects.list]]
+        title = "Project Lorem Ipsum"
+        meta = "Open Source"
+        tagline = "You can use this section for your side projects. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+
+        [[params.projects.list]]
+        title = "Project Sed Fringilla"
+        meta = "Open Source"
+        tagline = "You can use this section for your side projects. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim."
+
+        [[params.projects.list]]
+        title = "Project Praesent"
+        meta = "Open Source"
+        tagline = "You can use this section for your side projects. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim."
+
+
+
+
+
+
+
+
+
+
+    [params.information]
+        enable = false
+
+        [[params.information.list]]
+        title = "Papers"
+        [[params.information.list.items]]
+        details = "2018 · Lorem Ipsum"
+        [[params.information.list.items]]
+        details = "2016 · Sed Fringilla"
+
+        [[params.information.list]]
+        title = "Interests"
+        details = "Climbing, Snowboarding, Photography, Travelling"
+
+
+
+
+
+
+
+
+    [params.social]
+        enable = true
+
+        [[params.social.list]]
+        icon = "fab fa-github-square"
+        url = "//github.com/suvl"
+        title = "suvl"
+        [[params.social.list]]
+        icon = "fab fa-linkedin"
+        url = "//linkedin.com/in/joaotrigosoares"
+        title = "joaotrigosoares"
+        [[params.social.list]]
+        icon = "fab fa-twitter-square"
+        url = "//twitter.com/thegreatdevop"
+        title = "@thegreatdevop"
+
+
+
+
+
