@@ -66,6 +66,8 @@ googleAnalytics = "UA-61989966-1"
         [[params.skills.list.items]]
         details = "Distributed Storage: [Ceph](https://ceph.io/) (block, object, filesystem)"
         [[params.skills.list.items]]
+        details = "Message Systems: RabbitMQ, MQTT (Mosquitto)"
+        [[params.skills.list.items]]
         details = "Windows server 2008/2012/2016"
         [[params.skills.list.items]]
         details = "Object-oriented: C#, Golang"
@@ -188,9 +190,9 @@ googleAnalytics = "UA-61989966-1"
         enable = true
 
         [[params.experience.list]]
-        title = "Senior Software Engineer"
-        dates = "2019 - Present"
-        company = "Google"
+        title = "DevOps Engineer"
+        dates = "2018 - Present"
+        company = "NOS Inovação"
         details = "Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis."
         [[params.experience.list.items]]
         details = "Lorem ipsum dolor sit amet, consectetuer."
@@ -200,9 +202,9 @@ googleAnalytics = "UA-61989966-1"
         details = "Etiam ultricies nisi vel augue."
 
         [[params.experience.list]]
-        title = "Lead Software Developer"
-        dates = "2016 - 2019"
-        company = "Apple"
+        title = "Lead Software Engineer"
+        dates = "2017 - 2018"
+        company = "NOS Inovação"
         details = "Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel."
         [[params.experience.list.items]]
         details = "Lorem ipsum dolor sit amet, consectetuer."
@@ -210,26 +212,26 @@ googleAnalytics = "UA-61989966-1"
         details = "Aenean commodo ligula eget dolor."
 
         [[params.experience.list]]
-        title = "Senior Software Developer"
-        dates = "2014 - 2016"
-        company = "Dropbox"
-        details = "Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
-
-        [[params.experience.list]]
-        title = "Senior Developer"
-        dates = "2013 - 2014"
-        company = "Uber"
-        details = "Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus."
+        title = "Senior Software Engineer"
+        dates = "2015 - 2017"
+        company = "NOS Inovação"
+        details = ""
 
         [[params.experience.list]]
         title = "Software Engineer"
         dates = "2011 - 2015"
         company = "Accenture Technology Solutions"
-        details = """This was my first job, and as I had C# experience from college I was assigned to that unit inside the Lisbon Delivery Center. I was then allocated to the SharePoint team.
+        details = """I was assigned to that unit inside the Lisbon Delivery Center. I was then allocated to the SharePoint team.
 
-There I was involved in developing diverse SharePoint solutions, for intranet and public portals. The biggest being the EDP intranet, awarded with the Europe's best at the 2013 Digital Communication Awards (reference). That project involved scaling for 12k employees using it for booking vehicles, using team sites, managing schedules and vacation days, receiving company news, whatnot.
+There I was involved in developing diverse SharePoint solutions, for intranet and public portals. The biggest being the EDP intranet, awarded with the Europe's best at the 2013 Digital Communication Awards. That project involved scaling for 12k employees using it for booking vehicles, using team sites, managing schedules and vacation days, receiving company news, whatnot.
 
-Other projects were smaller, for energy and telecom clients. One project I'd like to highlight was related to the POS systems of all stores of a major telecom provider. The company had bought highly advanced terminals but those were misused just for simple payments. That project integrated their billing and store front systems to take advantage of paperless signatures, integrated payment receipts and advanced reporting features."""
+There were other projects, of a smaller nature. One project I'd like to highlight was related to the POS systems of all stores of a major telecom provider. The company had bought highly advanced terminals but those were misused just for simple payments. That project integrated their billing and store front systems to take advantage of paperless signatures, integrated payment receipts and advanced reporting features."""
+        [[params.experience.list.items]]
+        details = "Sharepoint, ASP.NET, C#"
+        [[params.experience.list.items]]
+        details = "Windows Server 2008/2012 R2, SQL Server"
+        [[params.experience.list.items]]
+        details = "Full-stack web development."
 
         [[params.experience.list]]
         title = "Researcher"
@@ -253,19 +255,19 @@ Other projects were smaller, for energy and telecom clients. One project I'd lik
         enable = true
 
         [[params.projects.list]]
-        title = "Project Lorem Ipsum"
+        title = "NAME"
         meta = "Open Source"
-        tagline = "You can use this section for your side projects. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+        tagline = "A dependencies management library designed to expose and access dependencies information."
 
         [[params.projects.list]]
-        title = "Project Sed Fringilla"
-        meta = "Open Source"
-        tagline = "You can use this section for your side projects. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim."
+        title = "Network PVR"
+        meta = "Proprietary: NOS Inovação"
+        tagline = "Allows service providers to manage the complete recording ecosystem in a flexible manner. It also eliminates the need for individual user storage space in set-top boxes by providing a central location where all recorded programs could be stored and easily accessible. Catch up TV 7 days in the past. The biggest change since moving from black and white to color TV."
 
         [[params.projects.list]]
-        title = "Project Praesent"
-        meta = "Open Source"
-        tagline = "You can use this section for your side projects. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim."
+        title = "edpOn Intranet"
+        meta = "Proprietary: EDP"
+        tagline = "The edpOn intranet is the entry point and main communication channel for the more than 12 000 employees of EDP, in three languages and 5 continents."
 
 
 
