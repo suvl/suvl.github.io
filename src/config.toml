@@ -1,6 +1,6 @@
 # Page settings
 
-baseURL = "https://jtsoar.es"
+baseURL = "https://jtsoar.es/"
 languageCode = "en"
 title = "Resume for João Trigo Soares"
 theme = "hugo-devresume-theme"
@@ -180,7 +180,9 @@ publishDir = "../"
             \n\n\
             When the need for moving to the cloud and DevOps transformation arised I was called upon changing roles and started my current position as a DevOps Engineer. I'm contributing to \
             DevOps changes like adopting containerization, CI/CD, GitOps, automation (e.g. infrastructure-as-code, jmeter tests), hybrid infrastructure (on prem + cloud), distributed storage, \
-            monitoring and self-healing systems.\n\nI'm enroled to the CKA exam and plan to get certified this year."""
+            monitoring and self-healing systems.
+            \n\nI'm a Certified Kubernetes Administrator with ID `LF-7j6a6nkfxw`. Check my certificate [here](https://training.linuxfoundation.org/certification/verify).
+            \n\nI'm enroled to the CKAD exam and plan to get certified this year."""
 
 
 
