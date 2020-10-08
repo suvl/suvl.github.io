@@ -181,7 +181,7 @@ publishDir = "../"
             When the need for moving to the cloud and DevOps transformation arised I was called upon changing roles and started my current position as a DevOps Engineer. I'm contributing to \
             DevOps changes like adopting containerization, CI/CD, GitOps, automation (e.g. infrastructure-as-code, jmeter tests), hybrid infrastructure (on prem + cloud), distributed storage, \
             monitoring and self-healing systems.
-            \n\nI'm a Certified Kubernetes Administrator with ID `LF-7j6a6nkfxw`. Check my certificate [here](https://training.linuxfoundation.org/certification/verify).
+            \n\nI'm a Certified Kubernetes Administrator with ID `LF-7j6a6nkfxw`. Check my certificate [at the Linux Foundation website](https://training.linuxfoundation.org/certification/verify).
             \n\nI'm enroled to the CKAD exam and plan to get certified this year."""
 
 
@@ -243,7 +243,7 @@ There were other projects, of a smaller nature. One project I'd like to highligh
         company = "INESC TEC"
         details = """I integrated the Computer Vision team while developing my master's thesis. My project intended to reconstruct rough 3D models from freely taken pictures. \
         It was a sub-project of a bigger effort from the team \to consistently measure the resulting effects of mastectomy interventions. The results would contribute to find \
-        and develop methods where the aesthetic impact was minimized while the change of success was higher.\n\nCheck the thesis [here](https://repositorio-aberto.up.pt/handle/10216/63333)."""
+        and develop methods where the aesthetic impact was minimized while the change of success was higher.\n\n[Check out the full thesis](https://repositorio-aberto.up.pt/handle/10216/63333)."""
 
 
 
