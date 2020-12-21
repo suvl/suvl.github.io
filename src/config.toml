@@ -170,19 +170,18 @@ publishDir = "../"
         enable = true
         text = """I've started my carreer as an IT consultant at Accenture, working for the Resources business (electricity, petrol). I've dedicated four years to 
             helping that companies with digital transformations and paperless workflows. My work was around Windows and ASP.NET software, namely Sharepoint and Windows Server. \
-            I was promoted up to the role of Senior Developer.\
-            \n\n\
+            I was promoted up to the role of Senior Developer.
             After that I started as a backend developer on one of the biggest telcos in Portugal. There I've helped implement scalable solutions to support the \
             TV multimedia business. Notable works include backends for user profiles and preferences, work in the cloud-based \
             [Personal View Recorder](https://en.wikipedia.org/wiki/Digital_video_recorder) engine, a new Auto Configuration System \
             based on the [XMiDT](https://comcast.github.io/#xmidt-projects) stack, and a new [Automatic Speech Recognition](https://en.wikipedia.org/wiki/Automatic_speech_recognition) \
-            system using Azure's LUIS apis. I got up to Lead Developer.\
-            \n\n\
+            system using Azure's LUIS apis. I got up to Lead Developer.
             When the need for moving to the cloud and DevOps transformation arised I was called upon changing roles and started my current position as a DevOps Engineer. I'm contributing to \
             DevOps changes like adopting containerization, CI/CD, GitOps, automation (e.g. infrastructure-as-code, jmeter tests), hybrid infrastructure (on prem + cloud), distributed storage, \
             monitoring and self-healing systems.
-            \n\nI'm a Certified Kubernetes Administrator with ID `LF-7j6a6nkfxw`. Check my certificate [at the Linux Foundation website](https://training.linuxfoundation.org/certification/verify).
-            \n\nI'm enroled to the CKAD exam and plan to get certified this year."""
+            \n\nI'm a Certified Kubernetes Administrator with ID `LF-7j6a6nkfxw`. I'm also a Certified Kubernetes Application Developer with ID `LF-aqpmniufwu`.
+            \n\nI'm enrolled in the CKS certification and plan to get it sometime around 2021.
+            You can check my certificates [at the Linux Foundation website](https://training.linuxfoundation.org/certification/verify)."""
 
 
 
