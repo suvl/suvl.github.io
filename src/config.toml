@@ -179,8 +179,7 @@ publishDir = "../"
             When the need for moving to the cloud and DevOps transformation arised I was called upon changing roles and started my current position as a DevOps Engineer. I'm contributing to \
             DevOps changes like adopting containerization, CI/CD, GitOps, automation (e.g. infrastructure-as-code, jmeter tests), hybrid infrastructure (on prem + cloud), distributed storage, \
             monitoring and self-healing systems.
-            \n\nI'm a Certified Kubernetes Administrator with ID `LF-7j6a6nkfxw`. I'm also a Certified Kubernetes Application Developer with ID `LF-aqpmniufwu`.
-            \n\nI'm enrolled in the CKS certification and plan to get it sometime around 2021.
+            \n\nI'm a Certified Kubernetes Administrator with ID `LF-7j6a6nkfxw`. I'm also a Certified Kubernetes Application Developer with ID `LF-aqpmniufwu`. I'm enrolled in the CKS certification and plan to get it sometime around 2021.
             You can check my certificates [at the Linux Foundation website](https://training.linuxfoundation.org/certification/verify)."""
 
 
@@ -196,29 +195,66 @@ publishDir = "../"
         title = "DevOps Engineer"
         dates = "2018 - Present"
         company = "NOS Inovação"
-        details = "Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis."
+        details = "This challenge was created from the need to make NOS evolve and walk towards integrated microservices' architectures and having it orchestrated. We have fully embraced the CNCF, OSS and container solutions, having Kubernetes at the center of agile but resilient and tolerant systems. My mission is to advocate towards adopting Cloud Native architectures, and implementing those to gather success stories and lessons learned. I'm also working on \"lift-and-shift\" projects that try and get on premise workloads to the cloud. I'm trying to keep up with all CN ecosystem, specially by taking part of KubeCon and other conferences (Cloud Native Kitchen, Software Circus, ...). Some relevant success stories I might think of may be: implementing and maintaining a CEPH distributed storage cluster, GitOps for Kubernetes and HAProxy with Flux, Jenkins and haproxy-wi, implementing E2E workloads using AKS and/or GKE, advocating for service mesh integrations with Istio."
         [[params.experience.list.items]]
-        details = "Lorem ipsum dolor sit amet, consectetuer."
+        details = "Kubernetes"
         [[params.experience.list.items]]
-        details = "Aenean commodo ligula eget dolor."
+        details = "CRIs (docker, containerd, cri-o)"
         [[params.experience.list.items]]
-        details = "Etiam ultricies nisi vel augue."
+        details = "Ingress software (nginx, haproxy, envoy)"
+        [[params.experience.list.items]]
+        details = "Monitoring software (prometheus, alertmanager, grafana, ...)"
+        [[params.experience.list.items]]
+        details = "Distributed Storage (CEPH, Rook)"
+        [[params.experience.list.items]]
+        details = "Logging and events (Elasticsearch, Logstash, Kafka, Vector, ...)"
+        [[params.experience.list.items]]
+        details = "GitOps and Policies (OPA, Gitlab, Jenkins)"
+        [[params.experience.list.items]]
+        details = "IaC and configuration (Terraform, Ansible)"
+        [[params.experience.list.items]]
+        details = "Cloud Infrastructure and Implementation (GCP (GKE), Azure (AKS))"
+        [[params.experience.list.items]]
+        details = "Golang, shell/ash/bash (preferabily POSIX), fish"
+        [[params.experience.list.items]]
+        details = "Security (gVisor, Sealed Secrets)"
 
         [[params.experience.list]]
         title = "Lead Software Engineer"
         dates = "2017 - 2018"
         company = "NOS Inovação"
-        details = "Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel."
+        details = "At this time I took a leading role, in a sense of having extensive autonomy on technical decisions regarding the techical paths of some existing projects but also starting some new ones. These were times that saw the rise of `dotnet core` and the adoption of conainerization and the move of typical Windows workloads to Linux. I worked on core projects like the [EPG](https://en.wikipedia.org/wiki/Electronic_program_guide) APIs, the [NAME project](https://github.com/nosinovacao/name-sdk), an ACS solution (based on [WebPA](https://github.com/xmidt-org/webpa)) and selfservice APIs that allow clients to chang their TV subscriptions. It was also a time of starting the move towards microservices and breaking monolith applications."
         [[params.experience.list.items]]
-        details = "Lorem ipsum dolor sit amet, consectetuer."
+        details = "(same as the previous one)"
         [[params.experience.list.items]]
-        details = "Aenean commodo ligula eget dolor."
+        details = ".NET Core"
+        [[params.experience.list.items]]
+        details = "Docker"
+        [[params.experience.list.items]]
+        details = "Rancher's Cattle"
 
         [[params.experience.list]]
         title = "Senior Software Engineer"
         dates = "2015 - 2017"
         company = "NOS Inovação"
-        details = ""
+        details = "I got challenged to do some rework on existing APIs on the Social aspects of the TV experience. These were some rough applications that needed both some refactoring to get a simpler architecture and the implementation of newer features that'd be required for the Next Generation of   TV products (that then became known as UMA). It was also a great experience as I started working with NoSQL and defining REST APIs (rather than just consuming them)."
+        [[params.experience.list.items]]
+        details = "ASP.NET"
+        [[params.experience.list.items]]
+        details = "C#"
+        [[params.experience.list.items]]
+        details = ".NET Framework"
+        [[params.experience.list.items]]
+        details = "MongoDB"
+        [[params.experience.list.items]]
+        details = "SQL Server (using Entity Framework)"
+        [[params.experience.list.items]]
+        details = "RabbitMQ"
+        [[params.experience.list.items]]
+        details = "Postman, Swagger, jmeter, ..."
+        [[params.experience.list.items]]
+        details = "Backend web development"
+
 
         [[params.experience.list]]
         title = "Software Engineer"
@@ -234,7 +270,7 @@ There were other projects, of a smaller nature. One project I'd like to highligh
         [[params.experience.list.items]]
         details = "Windows Server 2008/2012 R2, SQL Server"
         [[params.experience.list.items]]
-        details = "Full-stack web development."
+        details = "Full-stack web development"
 
         [[params.experience.list]]
         title = "Researcher"
@@ -255,7 +291,7 @@ There were other projects, of a smaller nature. One project I'd like to highligh
 
 
     [params.projects]
-        enable = true
+        enable = false
 
         [[params.projects.list]]
         title = "NAME"
