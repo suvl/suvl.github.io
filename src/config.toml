@@ -179,7 +179,7 @@ publishDir = "../"
             When the need for moving to the cloud and DevOps transformation arised I was called upon changing roles and started my current position as a DevOps Engineer. I'm contributing to \
             DevOps changes like adopting containerization, CI/CD, GitOps, automation (e.g. infrastructure-as-code, jmeter tests), hybrid infrastructure (on prem + cloud), distributed storage, \
             monitoring and self-healing systems.
-            \n\nI'm a Certified Kubernetes Administrator with ID `LF-7j6a6nkfxw`. I'm also a Certified Kubernetes Application Developer with ID `LF-aqpmniufwu`. I'm enrolled in the CKS certification and plan to get it sometime around 2021.
+            \n\nI'm a Certified Kubernetes Administrator with ID `LF-7j6a6nkfxw`. I'm also a Certified Kubernetes Application Developer with ID `LF-aqpmniufwu`. Finally I'm a Certified Kubernetes Security Specialist with ID `LF-rlmu1d2eat`.
             You can check my certificates [at the Linux Foundation website](https://training.linuxfoundation.org/certification/verify)."""
 
 
@@ -192,8 +192,14 @@ publishDir = "../"
         enable = true
 
         [[params.experience.list]]
+        title = "DevOps Team Leader"
+        dates = "2021 - Present"
+        Company = "NOS Inovação"
+        details = "After years working on the team, I've been offered to get on a leadership role and imprint my vision upon the future of the team, the department and hopefully the company. The challenges remain mostly the same (see the role below) but with added responsibility of leading my fellow teammates and inspire the teams around us towards a cloud native, highly automated and very observable future."
+
+        [[params.experience.list]]
         title = "DevOps Engineer"
-        dates = "2018 - Present"
+        dates = "2018 - 2021"
         company = "NOS Inovação"
         details = "This challenge was created from the need to make NOS evolve and walk towards integrated microservices' architectures and having it orchestrated. We have fully embraced the CNCF, OSS and container solutions, having Kubernetes at the center of agile but resilient and tolerant systems. My mission is to advocate towards adopting Cloud Native architectures, and implementing those to gather success stories and lessons learned. I'm also working on \"lift-and-shift\" projects that try and get on premise workloads to the cloud. I'm trying to keep up with all CN ecosystem, specially by taking part of KubeCon and other conferences (Cloud Native Kitchen, Software Circus, ...). Some relevant success stories I might think of may be: implementing and maintaining a CEPH distributed storage cluster, GitOps for Kubernetes and HAProxy with Flux, Jenkins and haproxy-wi, implementing E2E workloads using AKS and/or GKE, advocating for service mesh integrations with Istio."
         [[params.experience.list.items]]
@@ -215,9 +221,9 @@ publishDir = "../"
         [[params.experience.list.items]]
         details = "Cloud Infrastructure and Implementation (GCP (GKE), Azure (AKS))"
         [[params.experience.list.items]]
-        details = "Golang, shell/ash/bash (preferabily POSIX), fish"
+        details = "Golang, shell/ash/bash, fish"
         [[params.experience.list.items]]
-        details = "Security (gVisor, Sealed Secrets)"
+        details = "Security (gVisor, Sealed Secrets, Trivy, X-Ray, AppArmor, ...)"
 
         [[params.experience.list]]
         title = "Lead Software Engineer"
