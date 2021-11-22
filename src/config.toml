@@ -194,7 +194,7 @@ publishDir = "../"
         [[params.experience.list]]
         title = "DevOps Team Leader"
         dates = "2021 - Present"
-        Company = "NOS Inovação"
+        company = "NOS Inovação"
         details = "After years working on the team, I've been offered to get on a leadership role and imprint my vision upon the future of the team, the department and hopefully the company. The challenges remain mostly the same (see the role below) but with added responsibility of leading my fellow teammates and inspire the teams around us towards a cloud native, highly automated and very observable future."
 
         [[params.experience.list]]
