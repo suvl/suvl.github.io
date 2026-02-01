@@ -92,6 +92,14 @@ jobs:
           restore-keys:
             hugo-
 
+      - name: Fix for Hugo permissions bug
+        # See: https://discourse.gohugo.io/t/sitemap-xml-created-with-wrong-permissions/56376
+        # add +w permission to public/sitemap.xml if it exists
+        run: |
+          if [ -f ./public/sitemap.xml ]; then
+            chmod +w ./public/sitemap.xml
+          fi
+
       - name: Build the site
         run: |
           hugo \
