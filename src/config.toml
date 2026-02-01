@@ -4,7 +4,7 @@ baseURL = "https://jtsoar.es/"
 languageCode = "en"
 title = "Resume for João Trigo Soares"
 theme = "hugo-devresume-theme"
-googleAnalytics = "UA-61989966-1"
+googleAnalytics = "G-HNL3T7BE5Z"
 
 publishDir = "../"
 
@@ -192,8 +192,14 @@ publishDir = "../"
         enable = true
 
         [[params.experience.list]]
-        title = "DevOps Team Leader"
-        dates = "2021 - Present"
+        title = "Platforms Engineering Team Lead"
+        dates = "2023 - Present"
+        company = "NOS Inovação"
+        details = "After leading the DevOps team for 2 years, I've been given the opportunity to lead a bigger team that encompasses both Engineering and Operation in order to advance the infrastructure modernization of NOS. The mission is to create a set of off-the-shelf self-service platforms that allow our development teams to easily and quickly deploy their applications in a cloud native way, with high levels of automation, observability and resilience. This includes the creation and maintenance of Kubernetes-based platforms, CI/CD pipelines, monitoring and alerting systems, and infrastructure as code solutions. The goal is to empower our development teams to focus on delivering value to our customers while we provide them with the best tools and platforms to do so. This is a team tha encompasses the roles other companies usually keep separated: runtime, observability, research and development, security."
+
+        [[params.experience.list]]
+        title = "DevOps Team Lead"
+        dates = "2021 - 2023"
         company = "NOS Inovação"
         details = "After years working on the team, I've been offered to get on a leadership role and imprint my vision upon the future of the team, the department and hopefully the company. The challenges remain mostly the same (see the role below) but with added responsibility of leading my fellow teammates and inspire the teams around us towards a cloud native, highly automated and very observable future."
 
