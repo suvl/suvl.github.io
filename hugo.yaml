@@ -76,7 +76,7 @@ params:
         default: system
 
     portfolio:
-      enable: true
+      enable: false
 
     blog:
       enable: false
@@ -92,7 +92,7 @@ params:
       enable: true
 
     tags:
-      enable: true
+      enable: false
       on_card: true
 
   # Footer
