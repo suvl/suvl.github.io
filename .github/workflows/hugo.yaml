@@ -76,7 +76,6 @@ jobs:
           echo "Node.js: $(node --version)"
 
       - name: Install Node.js dependencies
-        working-directory: src
         run: |
           [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true
 
@@ -106,7 +105,6 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --source ./src \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
 

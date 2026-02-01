@@ -17,7 +17,7 @@ module:
       target: static/fonts
 
 # Publish to parent directory
-publishDir: "../public"
+publishDir: "public"
 
 # Languages
 languages:

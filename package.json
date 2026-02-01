@@ -59,6 +59,6 @@
     "postcss-cli": "^11.0.0",
     "typeit": "^8.8.7"
   },
-  "name": "src-new",
+  "name": "src",
   "version": "0.1.0"
 }
