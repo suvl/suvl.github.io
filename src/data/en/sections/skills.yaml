@@ -1,0 +1,119 @@
+section:
+  name: Skills
+  id: skills
+  enable: true
+  weight: 2
+  showOnNavbar: true
+  filter: true
+  template: sections/skills.html
+
+buttons:
+  - name: All
+    filter: "all"
+  - name: Kubernetes
+    filter: "kubernetes"
+  - name: Cloud
+    filter: "cloud"
+  - name: CI/CD
+    filter: "cicd"
+  - name: Observability
+    filter: "observability"
+  - name: Languages
+    filter: "language"
+
+skills:
+  - name: Kubernetes
+    logo: /images/sections/skills/kubernetes.svg
+    summary: "Expert in Kubernetes from 1.11 to latest. CKA, CKAD, CKS certified."
+    categories: ["kubernetes"]
+    url: "https://kubernetes.io/"
+
+  - name: Docker
+    logo: /images/sections/skills/docker.svg
+    summary: "Containerization with Docker, containerd, CRI-O, and Podman."
+    categories: ["kubernetes"]
+    url: "https://docker.com/"
+
+  - name: Helm
+    logo: /images/sections/skills/helm.svg
+    summary: "Kubernetes package management and templating."
+    categories: ["kubernetes"]
+    url: "https://helm.sh/"
+
+  - name: Istio
+    logo: /images/sections/skills/istio.svg
+    summary: "Service mesh implementation and traffic management."
+    categories: ["kubernetes"]
+    url: "https://istio.io/"
+
+  - name: Azure / AKS
+    logo: /images/sections/skills/azure.svg
+    summary: "Azure Kubernetes Service, Azure DevOps, cloud infrastructure."
+    categories: ["cloud"]
+    url: "https://azure.microsoft.com/"
+
+  - name: GCP / GKE
+    logo: /images/sections/skills/gcp.svg
+    summary: "Google Kubernetes Engine and GCP services."
+    categories: ["cloud"]
+    url: "https://cloud.google.com/"
+
+  - name: Terraform
+    logo: /images/sections/skills/terraform.svg
+    summary: "Infrastructure as Code for multi-cloud deployments."
+    categories: ["cloud", "cicd"]
+    url: "https://terraform.io/"
+
+  - name: Ansible
+    logo: /images/sections/skills/ansible.svg
+    summary: "Configuration management and automation."
+    categories: ["cicd"]
+    url: "https://ansible.com/"
+
+  - name: Jenkins
+    logo: /images/sections/skills/jenkins.svg
+    summary: "CI/CD pipelines and automation."
+    categories: ["cicd"]
+    url: "https://jenkins.io/"
+
+  - name: Prometheus
+    logo: /images/sections/skills/prometheus.svg
+    summary: "Metrics collection, alerting, and monitoring."
+    categories: ["observability"]
+    url: "https://prometheus.io/"
+
+  - name: Grafana
+    logo: /images/sections/skills/grafana.svg
+    summary: "Visualization and dashboards for observability."
+    categories: ["observability"]
+    url: "https://grafana.com/"
+
+  - name: Elasticsearch
+    logo: /images/sections/skills/elasticsearch.svg
+    summary: "Log aggregation and search with ELK stack."
+    categories: ["observability"]
+    url: "https://elastic.co/"
+
+  - name: Ceph
+    logo: /images/sections/skills/ceph.svg
+    summary: "Distributed storage - block, object, and filesystem."
+    categories: ["cloud"]
+    url: "https://ceph.io/"
+
+  - name: Go
+    logo: /images/sections/skills/go.svg
+    summary: "Backend development and tooling."
+    categories: ["language"]
+    url: "https://go.dev/"
+
+  - name: C# / .NET
+    logo: /images/sections/skills/csharp.svg
+    summary: "ASP.NET, .NET Core, backend development."
+    categories: ["language"]
+    url: "https://dotnet.microsoft.com/"
+
+  - name: Python
+    logo: /images/sections/skills/python.svg
+    summary: "Scripting, automation, and tooling."
+    categories: ["language"]
+    url: "https://python.org/"

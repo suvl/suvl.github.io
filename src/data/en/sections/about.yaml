@@ -1,0 +1,71 @@
+section:
+  name: About
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+  template: sections/about.html
+
+designation: Platforms Engineering Team Lead
+company:
+  name: NOS Inovação
+  url: "https://www.nos.pt"
+
+summary: |
+  I've started my career as an IT consultant at Accenture, working for the Resources business (electricity, petrol). 
+  I dedicated four years to helping companies with digital transformations and paperless workflows using Windows and ASP.NET software.
+
+  After that I started as a backend developer at one of the biggest telcos in Portugal. There I helped implement scalable solutions 
+  to support the TV multimedia business, including backends for user profiles, cloud-based PVR, and Auto Configuration Systems.
+
+  When the need for moving to the cloud and DevOps transformation arose, I transitioned to DevOps Engineering. Now I lead a 
+  Platforms Engineering team, creating self-service platforms for cloud native deployments with high automation, observability, and resilience.
+
+socialLinks:
+  - name: Email
+    icon: "fas fa-envelope"
+    url: "joao@jtsoar.es"
+  - name: Github
+    icon: "fab fa-github"
+    url: "https://github.com/suvl"
+  - name: LinkedIn
+    icon: "fab fa-linkedin"
+    url: "https://linkedin.com/in/joaotrigosoares"
+  - name: Twitter
+    icon: "fab fa-twitter"
+    url: "https://twitter.com/thegreatdevop"
+
+resourceLinks:
+  - title: "My Resume"
+    url: "files/resume.pdf"
+
+badges:
+  - type: certification
+    name: Certified Kubernetes Administrator (CKA)
+    url: "https://training.linuxfoundation.org/certification/verify"
+    badge: "https://training.linuxfoundation.org/wp-content/uploads/2019/03/logo_cka_whitetext-300x293.png"
+
+  - type: certification
+    name: Certified Kubernetes Application Developer (CKAD)
+    url: "https://training.linuxfoundation.org/certification/verify"
+    badge: "https://training.linuxfoundation.org/wp-content/uploads/2019/03/kubernetes-ckad-color-300x294.png"
+
+  - type: certification
+    name: Certified Kubernetes Security Specialist (CKS)
+    url: "https://training.linuxfoundation.org/certification/verify"
+    badge: "https://training.linuxfoundation.org/wp-content/uploads/2020/07/kubernetes-security-specialist-logo-300x285.png"
+
+  # - type: soft-skill-indicator
+  #   name: Leadership
+  #   percentage: 90
+  #   color: blue
+
+  # - type: soft-skill-indicator
+  #   name: Communication
+  #   percentage: 85
+  #   color: green
+
+  # - type: soft-skill-indicator
+  #   name: Problem Solving
+  #   percentage: 95
+  #   color: orange

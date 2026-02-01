@@ -1,0 +1,15 @@
+name: "João Trigo Soares"
+nickname: "João"
+greeting: "Hi, I am"
+image: "images/author/avatar.jpg"
+
+contactInfo:
+  email: "joao@jtsoar.es"
+  github: suvl
+  linkedin: joaotrigosoares
+
+summary:
+  - Platforms Engineering Team Lead at NOS Inovação
+  - Triple Kubernetes Certified (CKA, CKAD, CKS)
+  - 15+ years in software engineering and platform development
+  - Passionate about Cloud Native and DevOps practices

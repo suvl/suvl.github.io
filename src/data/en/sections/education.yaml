@@ -1,0 +1,27 @@
+section:
+  name: Education
+  id: education
+  enable: true
+  weight: 4
+  showOnNavbar: true
+  template: sections/education.html
+
+degrees:
+  - name: MSc in Computer Science
+    icon: fa-graduation-cap
+    timeframe: 2009 - 2011
+    institution:
+      name: Faculty of Engineering - University of Porto
+      url: "https://fe.up.pt"
+      logo: /images/sections/education/feup.png
+    publications:
+      - title: "Uncalibrated stereo vision applied to breast cancer treatment aesthetic assessment"
+        url: "https://repositorio-aberto.up.pt/handle/10216/63333"
+
+  - name: BSc in Engineering Sciences
+    icon: fa-university
+    timeframe: 2006 - 2009
+    institution:
+      name: Faculty of Engineering - University of Porto
+      url: "https://fe.up.pt"
+      logo: /images/sections/education/feup.png

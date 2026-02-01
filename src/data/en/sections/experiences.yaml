@@ -1,0 +1,90 @@
+section:
+  name: Experiences
+  id: experiences
+  enable: true
+  weight: 3
+  showOnNavbar: true
+  template: sections/experiences.html
+
+experiences:
+  - company:
+      name: NOS Inovação
+      url: "https://www.nos.pt"
+      location: Lisbon, Portugal
+      logo: /images/sections/experiences/nos.png
+      overview: One of the largest telecommunications and entertainment companies in Portugal.
+    positions:
+      - designation: Platforms Engineering Team Lead
+        start: Jan 2023
+        responsibilities:
+          - Leading a team encompassing Engineering and Operations for infrastructure modernization
+          - Creating self-service platforms for cloud native deployments
+          - High automation, observability, and resilience across runtime, security, and R&D
+
+      - designation: DevOps Team Lead
+        start: Jan 2021
+        end: Dec 2022
+        responsibilities:
+          - Led the DevOps team towards cloud native transformation
+          - Inspired teams towards highly automated and observable systems
+          - Drove adoption of GitOps and Infrastructure as Code
+
+      - designation: DevOps Engineer
+        start: Jan 2018
+        end: Dec 2020
+        responsibilities:
+          - Embraced CNCF and OSS solutions with Kubernetes at the center
+          - Implemented [CEPH](https://ceph.io/) distributed storage cluster
+          - GitOps for Kubernetes and HAProxy with [Flux](https://fluxcd.io/)
+          - E2E workloads using AKS and GKE
+          - Service mesh integrations with [Istio](https://istio.io/)
+
+      - designation: Lead Software Engineer
+        start: Jan 2017
+        end: Dec 2017
+        responsibilities:
+          - Technical leadership with autonomy on project decisions
+          - Led .NET Core adoption and containerization
+          - Worked on [EPG](https://en.wikipedia.org/wiki/Electronic_program_guide) APIs
+          - Created the [NAME SDK](https://github.com/nosinovacao/name-sdk)
+          - Built ACS solution based on [WebPA](https://github.com/xmidt-org/webpa)
+
+      - designation: Senior Software Engineer
+        start: Jan 2015
+        end: Dec 2016
+        responsibilities:
+          - Reworked TV Social APIs for the UMA next-gen TV platform
+          - Introduced NoSQL (MongoDB) and REST API design
+          - Backend development with ASP.NET, C#, RabbitMQ
+
+  - company:
+      name: Accenture Technology Solutions
+      url: "https://www.accenture.com"
+      location: Lisbon, Portugal
+      logo: /images/sections/experiences/accenture.png
+      overview: Global professional services company.
+    positions:
+      - designation: Software Engineer
+        start: Sep 2011
+        end: Dec 2014
+        responsibilities:
+          - SharePoint solutions for intranet and public portals
+          - EDP intranet - Europe's best at 2013 Digital Communication Awards
+          - Scaled solution for 12k employees
+          - POS integration for major telecom provider
+          - Full-stack web development with C#, ASP.NET, SQL Server
+
+  - company:
+      name: INESC TEC
+      url: "https://www.inesctec.pt"
+      location: Porto, Portugal
+      logo: /images/sections/experiences/inesctec.png
+      overview: Research institute in computer science and engineering.
+    positions:
+      - designation: Researcher
+        start: Sep 2010
+        end: Jul 2011
+        responsibilities:
+          - Computer Vision research for 3D reconstruction from photographs
+          - Master's thesis on measuring effects of mastectomy interventions
+          - "[View thesis](https://repositorio-aberto.up.pt/handle/10216/63333)"

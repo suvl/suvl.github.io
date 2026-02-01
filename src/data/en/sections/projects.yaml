@@ -1,0 +1,39 @@
+section:
+  name: Projects
+  id: projects
+  enable: true
+  weight: 5
+  showOnNavbar: true
+  template: sections/projects.html
+
+buttons:
+  - name: All
+    filter: "all"
+  - name: Open Source
+    filter: "open-source"
+  - name: Professional
+    filter: "professional"
+
+projects:
+  - name: NAME SDK
+    role: Creator
+    timeline: "2017 - Present"
+    repo: https://github.com/nosinovacao/name-sdk
+    summary: A dependencies management library designed to expose and access dependencies information.
+    tags: ["open-source", "dotnet"]
+
+  - name: Network PVR
+    role: Lead Developer
+    timeline: "2016 - 2018"
+    summary: |
+      Cloud-based Personal Video Recorder allowing service providers to manage recording ecosystems. 
+      Eliminates need for individual STB storage. Catch up TV 7 days in the past.
+    tags: ["professional", "backend"]
+
+  - name: edpOn Intranet
+    role: Developer
+    timeline: "2012 - 2014"
+    summary: |
+      Award-winning intranet (Europe's best, 2013 Digital Communication Awards) 
+      for 12,000+ employees across 3 languages and 5 continents.
+    tags: ["professional", "sharepoint"]

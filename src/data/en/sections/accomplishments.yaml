@@ -1,0 +1,38 @@
+section:
+  name: Certifications
+  id: accomplishments
+  enable: true
+  weight: 6
+  showOnNavbar: true
+  template: sections/accomplishments.html
+
+accomplishments:
+  - name: Certified Kubernetes Security Specialist (CKS)
+    timeline: "2021"
+    organization:
+      name: The Linux Foundation
+      url: "https://training.linuxfoundation.org"
+    courseOverview: |
+      Demonstrates proficiency in securing container-based applications and Kubernetes platforms.
+      ID: LF-rlmu1d2eat
+    certificateURL: "https://training.linuxfoundation.org/certification/verify"
+
+  - name: Certified Kubernetes Application Developer (CKAD)
+    timeline: "2020"
+    organization:
+      name: The Linux Foundation
+      url: "https://training.linuxfoundation.org"
+    courseOverview: |
+      Validates skills in designing, building and deploying cloud native applications for Kubernetes.
+      ID: LF-aqpmniufwu
+    certificateURL: "https://training.linuxfoundation.org/certification/verify"
+
+  - name: Certified Kubernetes Administrator (CKA)
+    timeline: "2019"
+    organization:
+      name: The Linux Foundation
+      url: "https://training.linuxfoundation.org"
+    courseOverview: |
+      Validates skills in Kubernetes cluster administration and troubleshooting.
+      ID: LF-7j6a6nkfxw
+    certificateURL: "https://training.linuxfoundation.org/certification/verify"
