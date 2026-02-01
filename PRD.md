@@ -2,7 +2,7 @@
 
 ## João Trigo Soares - Personal CV Website
 
-**Document Version:** 1.0  
+**Document Version:** 2.0  
 **Last Updated:** February 2026  
 **Project URL:** https://jtsoar.es/
 
@@ -10,9 +10,9 @@
 
 ## 1. Executive Summary
 
-This is a personal CV/resume website for João Trigo Soares, a DevOps Team Leader based in Lisbon, Portugal. The site is built using Hugo static site generator with the `hugo-devresume-theme`, a professionally designed developer resume template. The website serves as a digital portfolio and professional presence, showcasing work experience, technical skills, education, and certifications.
+This is a personal CV/portfolio website for João Trigo Soares, a Platforms Engineering Team Lead based in Lisbon, Portugal. The site is built using **Hugo** static site generator with the **Toha v4** theme, providing a modern, responsive, and feature-rich presentation of professional experience, technical skills, and certifications.
 
-**Current State:** The website has not been updated in approximately 5 years (last notable content dates to 2021). It requires content updates to reflect current career progression and technology stack.
+**Current State:** Fully migrated from the legacy `hugo-devresume-theme` to Toha v4 in February 2026. The site is actively maintained and deployed via GitHub Pages.
 
 ---
 
@@ -22,291 +22,231 @@ This is a personal CV/resume website for João Trigo Soares, a DevOps Team Leade
 
 | Goal | Description | Success Metric |
 |------|-------------|----------------|
-| **Professional Visibility** | Provide a public, easily accessible resume for recruiters, hiring managers, and professional contacts | Active website with current information |
-| **Personal Branding** | Establish a professional online presence that reflects expertise in DevOps and Cloud Native technologies | Consistent, modern presentation of skills and experience |
-| **SEO & Discoverability** | Ensure the website is discoverable via search engines | Proper meta tags, Google Analytics integration |
-| **Low Maintenance** | Static site that requires minimal hosting and maintenance overhead | GitHub Pages hosting, Hugo static generation |
+| **Professional Visibility** | Public, accessible resume for recruiters and hiring managers | Active website with current information |
+| **Personal Branding** | Showcase expertise in DevOps, Kubernetes, and Cloud Native | Consistent, modern presentation |
+| **SEO & Discoverability** | Search engine optimized with proper meta tags | Google Analytics integration (GA4) |
+| **Low Maintenance** | Static site with minimal hosting overhead | GitHub Pages, Hugo static generation |
 
 ### 2.2 Secondary Goals
 
-- Showcase open-source contributions and notable projects
-- Display professional certifications (CKA, CKAD, CKS)
-- Provide multiple contact methods for professional inquiries
-- Demonstrate technical competency through the website itself
+- Highlight Kubernetes triple certification (CKA, CKAD, CKS)
+- Showcase career progression from developer to team lead
+- Provide filterable skills taxonomy
+- Host additional standalone pages (e.g., Mac Apps guide)
 
 ---
 
 ## 3. User Personas
 
-### 3.1 Primary Persona: Technical Recruiter
+### 3.1 Technical Recruiter
+- **Goals:** Quickly assess technical background, verify certifications, find contact info
+- **Needs:** Clear experience timeline, downloadable resume, LinkedIn link
 
-**Name:** Maria, Technical Recruiter  
-**Company Type:** Tech company or recruitment agency  
-**Goals:**
-- Quickly assess candidate's technical background and experience level
-- Verify claimed certifications and skills
-- Find contact information for outreach
-- Understand career progression
+### 3.2 Engineering Manager
+- **Goals:** Evaluate technical depth and leadership experience
+- **Needs:** Project details, team leadership evidence, technology expertise
 
-**Needs from the Website:**
-- Clear, scannable layout of skills and experience
-- Prominent display of certifications with verification links
-- Easy-to-find contact information
-- PDF download option (not currently available)
-
-**Pain Points:**
-- Information overload; wants quick summary
-- Outdated information makes assessment difficult
+### 3.3 Fellow Engineer
+- **Goals:** Network, explore open-source contributions
+- **Needs:** GitHub link, blog posts (if enabled), project showcases
 
 ---
 
-### 3.2 Secondary Persona: Hiring Manager / Engineering Lead
+## 4. Technical Architecture
 
-**Name:** Carlos, VP of Engineering  
-**Company Type:** Enterprise or scale-up  
-**Goals:**
-- Deep-dive into technical capabilities
-- Understand specific technologies and project experience
-- Assess leadership and team experience
-- Evaluate culture fit through interests and communication style
+### 4.1 Stack
 
-**Needs from the Website:**
-- Detailed project descriptions with technologies used
-- Evidence of leadership roles and responsibilities
-- Links to GitHub, LinkedIn for further research
-- Clear narrative of career growth
+| Component | Technology | Version |
+|-----------|------------|---------|
+| Static Site Generator | Hugo Extended | 0.155.1 |
+| Theme | Toha | v4 (Hugo Module) |
+| Hosting | GitHub Pages | - |
+| CI/CD | GitHub Actions | - |
+| Analytics | Google Analytics 4 | G-HNL3T7BE5Z |
+| Package Manager | npm | 24.x |
+| CSS Framework | Bootstrap (via Toha) | - |
 
-**Pain Points:**
-- Generic descriptions without specific achievements
-- Missing metrics or impact statements
-
----
-
-### 3.3 Tertiary Persona: Professional Peer / Conference Attendee
-
-**Name:** Ana, DevOps Engineer  
-**Company Type:** Various  
-**Goals:**
-- Network with like-minded professionals
-- Learn about interesting projects and approaches
-- Find collaboration opportunities
-
-**Needs from the Website:**
-- Links to social profiles (GitHub, LinkedIn, Twitter)
-- Information about interests and side projects
-- Evidence of community involvement (conferences, open source)
-
----
-
-## 4. Core Features
-
-### 4.1 Currently Implemented Features
-
-| Feature | Status | Section | Description |
-|---------|--------|---------|-------------|
-| **Profile Header** | ✅ Active | Header | Name, tagline, and professional photo |
-| **Contact Information** | ✅ Active | Header | Email, website, location |
-| **Professional Summary** | ✅ Active | Summary | Career narrative and certification highlights |
-| **Work Experience** | ✅ Active | Experience | 6 positions with detailed descriptions and tech stacks |
-| **Technical Skills** | ✅ Active | Skills | Comprehensive list of technologies organized by category |
-| **Professional Skills** | ✅ Active | Skills | Soft skills and competencies |
-| **Education** | ✅ Active | Sidebar | BSc and MSc from University of Porto |
-| **Languages** | ✅ Active | Sidebar | Portuguese (Native), English (Professional) |
-| **Interests** | ✅ Active | Sidebar | Personal hobbies and interests |
-| **Social Links** | ✅ Active | Footer | GitHub, LinkedIn, Twitter |
-| **Google Analytics** | ✅ Active | Head | UA-61989966-1 tracking code |
-| **Responsive Design** | ✅ Active | Theme | Mobile-friendly Bootstrap 4 layout |
-
-### 4.2 Disabled/Optional Features
-
-| Feature | Status | Reason/Notes |
-|---------|--------|--------------|
-| **Awards** | ❌ Disabled | No awards configured |
-| **Projects Section** | ❌ Disabled | Content exists but section is disabled |
-| **Information/Papers** | ❌ Disabled | Not relevant or needs updating |
-
-### 4.3 Missing Features (Potential Enhancements)
-
-| Feature | Priority | Rationale |
-|---------|----------|-----------|
-| **PDF Export** | High | Recruiters often need downloadable resumes |
-| **Dark Mode** | Medium | Modern UX expectation |
-| **Blog/Articles** | Low | Content marketing, thought leadership |
-| **Project Portfolio** | Medium | Already has content, just disabled |
-| **Updated Analytics** | High | GA4 migration (UA deprecated) |
-| **Certifications Section** | Medium | Currently embedded in summary text |
-
----
-
-## 5. Technical Architecture
-
-### 5.1 Technology Stack
-
-| Component | Technology | Version/Notes |
-|-----------|------------|---------------|
-| **Static Site Generator** | Hugo | v0.69.0-DEV |
-| **Theme** | hugo-devresume-theme | Custom fork |
-| **CSS Framework** | Bootstrap 4 | SCSS source included |
-| **Icons** | Font Awesome 5 | v5.8.1 |
-| **Fonts** | Google Fonts (Roboto) | 300-900 weights |
-| **Hosting** | GitHub Pages | suvl.github.io |
-| **Domain** | jtsoar.es | CNAME configured |
-| **Analytics** | Google Analytics | UA tracking (legacy) |
-
-### 5.2 Project Structure
+### 4.2 Project Structure
 
 ```
 suvl.github.io/
-├── src/                    # Hugo source files
-│   ├── config.toml         # Main configuration (all content)
-│   ├── themes/             # Theme files
-│   │   └── hugo-devresume-theme/
-│   ├── static/             # Static assets
-│   └── resources/          # Generated resources
-├── index.html              # Generated output (publishDir: ../)
-├── assets/                 # Generated CSS/images
-├── CNAME                   # Custom domain config
-└── README.md               # Build instructions
+├── hugo.yaml              # Main Hugo configuration
+├── go.mod / go.sum        # Hugo module dependencies
+├── package.json           # npm dependencies (fonts, icons)
+├── data/
+│   └── en/
+│       ├── author.yaml    # Profile information
+│       ├── site.yaml      # Site metadata
+│       └── sections/
+│           ├── about.yaml          # Professional summary, social links, badges
+│           ├── experiences.yaml    # Work history
+│           ├── education.yaml      # Academic background
+│           ├── skills.yaml         # Filterable skills with icons
+│           ├── projects.yaml       # Notable projects
+│           └── accomplishments.yaml # Certifications
+├── static/
+│   ├── apps/              # Standalone Mac Apps guide
+│   └── images/            # Logos, avatar, skill icons
+├── public/                # Generated output
+└── .github/workflows/
+    └── hugo.yaml          # CI/CD pipeline
 ```
 
-### 5.3 Build Process
+### 4.3 Build & Deploy
 
-```bash
-cd src
-hugo -b "https://jtsoar.es" --gc --minify  # Production build
-hugo server --bind 0.0.0.0 --disableFastRender  # Development
+- **Local Dev:** `hugo server`
+- **Production Build:** `hugo --gc --minify`
+- **Deploy:** Automatic via GitHub Actions on push to `main`
+- **Output:** `public/` directory deployed to GitHub Pages
+
+---
+
+## 5. Content Sections
+
+### 5.1 About
+- Professional designation and company
+- Career summary narrative
+- Social links (Email, GitHub, LinkedIn, Twitter)
+- Certification badges (CKA, CKAD, CKS)
+
+### 5.2 Skills (Filterable)
+Categories: Kubernetes, Cloud, CI/CD, Observability, Languages
+
+| Skill | Category |
+|-------|----------|
+| Kubernetes | kubernetes |
+| Docker | kubernetes |
+| Helm | kubernetes |
+| Istio | kubernetes |
+| Azure / AKS | cloud |
+| GCP / GKE | cloud |
+| Terraform | cloud, cicd |
+| Ansible | cicd |
+| Jenkins | cicd |
+| Prometheus | observability |
+| Grafana | observability |
+| And more... | - |
+
+### 5.3 Experiences
+**NOS Inovação (2015 - Present)**
+- Platforms Engineering Team Lead (2023+)
+- DevOps Team Lead (2021-2022)
+- DevOps Engineer (2018-2020)
+- Lead Software Engineer (2017)
+- Senior Software Engineer (2015-2016)
+
+**Accenture (2011 - 2014)**
+- Software Engineer
+
+**INESC TEC (2010 - 2011)**
+- Researcher (Computer Vision)
+
+### 5.4 Education
+- MSc Informatics Engineering — FEUP (2011)
+- BSc Informatics Engineering — FEUP (2009)
+
+### 5.5 Accomplishments
+- Certified Kubernetes Administrator (CKA)
+- Certified Kubernetes Application Developer (CKAD)
+- Certified Kubernetes Security Specialist (CKS)
+
+### 5.6 Projects
+- NAME SDK — Open-source .NET instrumentation library
+- Network PVR — Cloud-based recording platform
+- edpOn Intranet — Award-winning enterprise intranet
+
+---
+
+## 6. Additional Pages
+
+### 6.1 Mac Apps Guide (`/apps/`)
+A standalone interactive page showcasing recommended macOS applications for power users. Features:
+- Category filtering (Productivity, System, Dev & Networks, Bonus)
+- Search functionality
+- "Problem Mode" toggle (browse by pain point vs. solution)
+- Distribution chart (Chart.js)
+- Self-contained HTML with Tailwind CSS
+
+---
+
+## 7. Features & Configuration
+
+### 7.1 Theme Features
+- ✅ Light/Dark mode (system default)
+- ✅ Responsive design
+- ✅ Table of Contents
+- ✅ Contact form section
+- ❌ Blog (disabled)
+- ❌ Portfolio gallery (disabled)
+- ❌ Tags (disabled)
+
+### 7.2 Analytics
+- Google Analytics 4: `G-HNL3T7BE5Z`
+
+### 7.3 SEO
+- Open Graph meta tags
+- JSON-LD structured data (via Toha)
+- Sitemap generation
+- robots.txt
+
+---
+
+## 8. Dependencies
+
+### 8.1 Hugo Modules
+```yaml
+module:
+  imports:
+    - path: github.com/hugo-toha/toha/v4
 ```
 
----
-
-## 6. Content Inventory (Current State - 2021)
-
-### 6.1 Work Experience Timeline
-
-| Period | Role | Company |
-|--------|------|---------|
-| 2021 - Present | DevOps Team Leader | NOS Inovação |
-| 2018 - 2021 | DevOps Engineer | NOS Inovação |
-| 2017 - 2018 | Lead Software Engineer | NOS Inovação |
-| 2015 - 2017 | Senior Software Engineer | NOS Inovação |
-| 2011 - 2015 | Software Engineer | Accenture Technology Solutions |
-| 2010 - 2011 | Researcher | INESC TEC |
-
-### 6.2 Certifications
-
-- **CKA** - Certified Kubernetes Administrator (ID: LF-7j6a6nkfxw)
-- **CKAD** - Certified Kubernetes Application Developer (ID: LF-aqpmniufwu)
-- **CKS** - Certified Kubernetes Security Specialist (ID: LF-rlmu1d2eat)
-
-### 6.3 Key Technical Domains
-
-- Kubernetes & Cloud Native (CNCF ecosystem)
-- Container Technologies (Docker, containerd, CRI-O)
-- Cloud Platforms (Azure/AKS, GCP/GKE)
-- GitOps & CI/CD (Jenkins, Azure DevOps, Flux)
-- Infrastructure as Code (Terraform, Ansible)
-- Distributed Storage (Ceph, Rook)
-- Observability (Prometheus, Grafana, ELK)
+### 8.2 npm Packages
+- `flag-icons` — Country flag SVGs
+- `@fontsource/mulish` — Typography
+- `katex` — Math rendering (if needed)
 
 ---
 
-## 7. Identified Issues & Technical Debt
+## 9. CI/CD Pipeline
 
-### 7.1 Content Issues
+**Workflow:** `.github/workflows/hugo.yaml`
 
-| Issue | Severity | Recommendation |
-|-------|----------|----------------|
-| Outdated experience (5 years) | 🔴 Critical | Update with current role and recent achievements |
-| "2021 - Present" still showing | 🔴 Critical | Update tenure dates |
-| Kubernetes version "1.11 to latest" outdated | 🟡 Medium | Update to current LTS versions |
-| Technology references may be outdated | 🟡 Medium | Review all tech references |
-| Twitter/X branding change | 🟢 Low | Update social icon/branding |
-
-### 7.2 Technical Issues
-
-| Issue | Severity | Recommendation |
-|-------|----------|----------------|
-| Hugo version 0.69.0-DEV is very old | 🟡 Medium | Upgrade to latest Hugo |
-| Google Analytics UA deprecated | 🔴 Critical | Migrate to GA4 |
-| No SSL certificate visible in config | 🟢 Low | Verify HTTPS configuration |
-| Font Awesome 5.8.1 outdated | 🟢 Low | Consider upgrade to v6 |
-
-### 7.3 Feature Gaps
-
-| Gap | Impact | Recommendation |
-|-----|--------|----------------|
-| No PDF resume download | High | Add downloadable PDF |
-| Projects section disabled | Medium | Enable and update content |
-| No structured data (JSON-LD) | Medium | Add for better SEO |
-| No meta image for social sharing | Medium | Add Open Graph image |
+| Step | Description |
+|------|-------------|
+| Checkout | Clone repo with submodules |
+| Setup Go | Install Go for Hugo modules |
+| Setup Node.js | Install npm for dependencies |
+| Install Dart Sass | SCSS compilation |
+| Install Hugo | Extended version |
+| npm ci | Install node dependencies |
+| Hugo Build | Generate static site |
+| Deploy | Push to GitHub Pages |
 
 ---
 
-## 8. Recommendations for Update
+## 10. Maintenance Notes
 
-### 8.1 Immediate Priority (Phase 1)
+### 10.1 Known Issues
+- **sitemap.xml permissions:** Hugo occasionally creates read-only files. Workflow includes workaround.
+- **Static mounts:** Explicit mounts in `hugo.yaml` required for static files to be copied.
 
-1. **Update work experience** - Add 2021-2026 achievements and any role changes
-2. **Refresh skills section** - Add newer technologies, remove obsolete ones
-3. **Migrate Google Analytics** - Switch from UA to GA4
-4. **Update Hugo version** - Upgrade to latest stable release
-5. **Verify all links** - Check for broken certification/social links
-
-### 8.2 Short-term Improvements (Phase 2)
-
-1. **Enable Projects section** - Showcase notable open source/proprietary work
-2. **Add PDF download** - Generate downloadable resume
-3. **Add separate Certifications section** - Better visibility for credentials
-4. **Improve meta tags** - Open Graph, Twitter Cards for social sharing
-
-### 8.3 Long-term Enhancements (Phase 3)
-
-1. **Consider theme update or redesign** - Modern aesthetics
-2. **Add blog capability** - Thought leadership content
-3. **Implement dark mode** - User preference support
-4. **Add structured data** - JSON-LD for better SEO
+### 10.2 Update Procedures
+1. **Content:** Edit YAML files in `data/en/sections/`
+2. **Theme:** `hugo mod get -u github.com/hugo-toha/toha/v4`
+3. **Dependencies:** `npm update`
 
 ---
 
-## 9. Success Metrics
+## 11. Future Roadmap
 
-| Metric | Current Baseline | Target |
-|--------|------------------|--------|
-| Content freshness | 5 years old | Updated quarterly |
-| Page load time | TBD | < 2 seconds |
-| Mobile responsiveness | Good | Excellent |
-| Analytics tracking | UA (deprecated) | GA4 active |
-| Social link validity | Unknown | 100% working |
-| Certification verification | Links present | All verifiable |
+| Priority | Feature | Status |
+|----------|---------|--------|
+| Low | Enable blog section | Planned |
+| Low | Add Portuguese translation | Planned |
+| Medium | Add resume PDF download | Pending |
+| Low | Enable portfolio/gallery | Not planned |
 
 ---
 
-## 10. Appendix
-
-### A. Build Commands Reference
-
-```bash
-# Development server
-cd src && hugo server --bind 0.0.0.0 --disableFastRender
-
-# Production build
-cd src && hugo -b "https://jtsoar.es" --gc --minify
-
-# Output goes to parent directory (publishDir = "../")
-```
-
-### B. Configuration File Location
-
-All content is managed in a single configuration file:
-- **Path:** `src/config.toml`
-- **Format:** TOML with nested params structure
-
-### C. Theme Credits
-
-- **Original Design:** Xiaoying Riley @ 3rd Wave Media
-- **Hugo Port:** CowboySmall
-- **Theme:** hugo-devresume-theme
-
----
-
-*This PRD was generated based on analysis of the existing codebase as of February 2026.*
+**Document maintained by:** João Trigo Soares  
+**Repository:** https://github.com/suvl/suvl.github.io
