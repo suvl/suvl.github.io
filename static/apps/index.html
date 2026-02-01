@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Essencial Mac Apps 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Chosen Palette: Warm Neutrals (Stone/Warm Gray) with Soft Blue Accent -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fafaf9; /* stone-50 */
+            color: #1c1917; /* stone-900 */
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f5f5f4; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d6d3d1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a29e; 
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Chart Container Styling - Mandatory */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px; /* Constraint width */
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Application Structure Plan: 
+         Structure: Dashboard / Catalog Layout.
+         Rationale: The content is a curated list of tools. A filtering system + card grid allows for non-linear exploration.
+         The "Problem Mode" is the key IA innovation here, allowing users to browse by "Pain Point" instead of "Solution Name".
+         Sections:
+         1. Header & Stats: Sets context and shows the breadth of the collection.
+         2. Controls: Search, Category Filter, and View Toggle.
+         3. Grid: The main content area.
+         4. Modal: For deep diving into specific apps without losing context.
+    -->
+
+    <!-- Visualization & Content Choices:
+         1. Donut Chart: Shows the distribution of apps by category. Goal: Inform/Overview. Interaction: Tooltip on hover.
+         2. Cards: Main entry point. Goal: Browse. Interaction: Click to expand, Hover effects.
+         3. Toggle Switch: Changes card content dynamically. Goal: Reframe (Problem vs Solution).
+         CONFIRMATION: NO SVG graphics used (FontAwesome used for icons). NO Mermaid JS used.
+    -->
+
+    <!-- Header Section -->
+    <header class="bg-white border-b border-stone-200 sticky top-0 z-30 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-stone-800 text-white p-2 rounded-lg">
+                    <i class="fa-brands fa-apple text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-stone-800 tracking-tight">Guia Mac Apps <span class="text-stone-400 font-light">2026</span></h1>
+                    <p class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Curadoria de Produtividade & Power User</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <div class="hidden md:block text-right">
+                    <div class="text-xs text-stone-400">Total de Apps</div>
+                    <div class="text-xl font-bold text-stone-800" id="total-count">0</div>
+                </div>
+                <button onclick="document.getElementById('about-modal').classList.remove('hidden')" class="text-stone-500 hover:text-stone-800 transition-colors">
+                    <i class="fa-solid fa-circle-info text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        
+        <!-- Intro & Context -->
+        <div class="mb-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-4">
+                <h2 class="text-2xl font-semibold text-stone-800">Explore o seu Toolkit</h2>
+                <p class="text-stone-600 leading-relaxed">
+                    Este painel interativo organiza uma seleção rigorosa de aplicações essenciais para macOS. 
+                    Desenhado para programadores, designers e "power users", este guia foca-se em resolver problemas reais: 
+                    desde a gestão de janelas e bateria até à segurança de rede e virtualização.
+                </p>
+                
+                <!-- Controls Container -->
+                <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm space-y-4">
+                    <!-- Search -->
+                    <div class="relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-stone-400"></i>
+                        <input type="text" id="search-input" placeholder="Pesquisar por nome, problema ou palavra-chave..." 
+                               class="w-full pl-10 pr-4 py-2 bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-stone-400 text-stone-700 placeholder-stone-400 transition-all">
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <!-- Category Filters -->
+                        <div class="flex flex-wrap gap-2" id="category-filters">
+                            <button class="filter-btn active px-3 py-1.5 rounded-full text-sm font-medium transition-colors bg-stone-800 text-white" data-category="all">Todas</button>
+                            <button class="filter-btn px-3 py-1.5 rounded-full text-sm font-medium transition-colors bg-stone-100 text-stone-600 hover:bg-stone-200" data-category="Produtividade">Produtividade</button>
+                            <button class="filter-btn px-3 py-1.5 rounded-full text-sm font-medium transition-colors bg-stone-100 text-stone-600 hover:bg-stone-200" data-category="Sistema">Sistema</button>
+                            <button class="filter-btn px-3 py-1.5 rounded-full text-sm font-medium transition-colors bg-stone-100 text-stone-600 hover:bg-stone-200" data-category="Dev">Dev & Redes</button>
+                            <button class="filter-btn px-3 py-1.5 rounded-full text-sm font-medium transition-colors bg-stone-100 text-stone-600 hover:bg-stone-200" data-category="Bónus">Bónus</button>
+                        </div>
+
+                        <!-- Mode Toggle -->
+                        <div class="flex items-center gap-3 bg-stone-50 px-3 py-1.5 rounded-lg border border-stone-200">
+                            <span class="text-xs font-semibold text-stone-500 uppercase">Modo:</span>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="mode-toggle" class="sr-only peer">
+                                <div class="w-11 h-6 bg-stone-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-stone-400 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-stone-800"></div>
+                                <span class="ml-2 text-sm font-medium text-stone-700" id="mode-label">Ver Soluções</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart Section -->
+            <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm flex flex-col justify-center items-center">
+                <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wide mb-2 self-start w-full border-b border-stone-100 pb-2">Distribuição por Categoria</h3>
+                <div class="chart-container">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apps Grid -->
+        <div id="apps-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Cards injected by JS -->
+        </div>
+
+        <!-- No Results State -->
+        <div id="no-results" class="hidden text-center py-20">
+            <div class="inline-block p-4 rounded-full bg-stone-100 text-stone-400 mb-4">
+                <i class="fa-solid fa-ghost text-3xl"></i>
+            </div>
+            <h3 class="text-lg font-medium text-stone-600">Nenhuma app encontrada</h3>
+            <p class="text-stone-400">Tente ajustar os filtros ou a pesquisa.</p>
+        </div>
+
+    </main>
+
+    <footer class="bg-white border-t border-stone-200 py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-stone-400 text-sm">Gerado via Canvas • Baseado em recomendações reais</p>
+        </div>
+    </footer>
+
+    <!-- Modal for App Details -->
+    <div id="app-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-stone-900 bg-opacity-75 transition-opacity backdrop-blur-sm" onclick="closeModal()"></div>
+
+        <div class="flex items-center justify-center min-h-screen p-4 text-center sm:p-0">
+            <div class="relative bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg w-full">
+                
+                <!-- Modal Header -->
+                <div class="bg-stone-50 px-4 py-5 sm:px-6 border-b border-stone-100 flex justify-between items-center">
+                    <h3 class="text-lg leading-6 font-bold text-stone-900" id="modal-title">App Name</h3>
+                    <button type="button" class="text-stone-400 hover:text-stone-500 focus:outline-none" onclick="closeModal()">
+                        <span class="sr-only">Close</span>
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="px-4 py-5 sm:p-6 space-y-4">
+                    
+                    <!-- Problem Badge -->
+                    <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-md">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fa-solid fa-triangle-exclamation text-amber-400"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-bold text-amber-800 uppercase tracking-wide mb-1">O Problema</p>
+                                <p class="text-sm text-amber-900" id="modal-problem">
+                                    Problem description goes here.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div>
+                        <h4 class="text-sm font-bold text-stone-900 uppercase tracking-wide mb-1">A Solução</h4>
+                        <p class="text-stone-600 text-sm leading-relaxed" id="modal-description">
+                            Detailed description goes here.
+                        </p>
+                    </div>
+
+                    <!-- Alternatives -->
+                    <div id="modal-alternatives-container" class="mt-4 pt-4 border-t border-stone-100">
+                        <h4 class="text-xs font-bold text-stone-400 uppercase tracking-wide mb-2">Alternativas</h4>
+                        <ul class="space-y-2 text-sm" id="modal-alternatives">
+                            <!-- List items -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="bg-stone-50 px-4 py-4 sm:px-6 sm:flex sm:flex-row-reverse gap-2">
+                    <a href="#" id="modal-link" target="_blank" class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-4 py-2 bg-stone-800 text-base font-medium text-white hover:bg-stone-700 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm items-center gap-2">
+                        Visitar Website <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                    <button type="button" class="mt-3 w-full inline-flex justify-center rounded-lg border border-stone-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-stone-700 hover:bg-stone-50 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="closeModal()">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Info Modal -->
+    <div id="about-modal" class="fixed inset-0 z-50 hidden" aria-labelledby="about-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-stone-900 bg-opacity-50 transition-opacity" onclick="document.getElementById('about-modal').classList.add('hidden')"></div>
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-xl shadow-xl max-w-md w-full p-6 relative">
+                <button class="absolute top-4 right-4 text-stone-400 hover:text-stone-600" onclick="document.getElementById('about-modal').classList.add('hidden')">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h3 class="text-xl font-bold mb-4">Sobre este Guia</h3>
+                <p class="text-stone-600 mb-4 text-sm">
+                    Este guia interativo foi gerado automaticamente com base numa conversa sobre recomendações de software para Mac. 
+                    O objetivo é ajudar utilizadores a encontrar ferramentas que melhorem o seu fluxo de trabalho, organizadas por categorias lógicas.
+                </p>
+                <p class="text-stone-600 text-sm">
+                    <strong>Nota:</strong> Todas as aplicações listadas são recomendações de terceiros e devem ser usadas sob sua própria responsabilidade.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- DATA STORE ---
+        const appsData = [
+            // Produtividade
+            {
+                id: 'bartender',
+                name: 'Bartender',
+                category: 'Produtividade',
+                icon: 'fa-ellipsis',
+                website: 'https://www.surteesstudios.com/bartender',
+                description: 'Permite esconder, reorganizar e gerir os ícones da barra de menus (junto ao relógio).',
+                problem: 'O "Notch" nos MacBooks modernos reduz o espaço disponível, fazendo com que ícones desapareçam se tiveres muitas apps abertas.',
+                alternatives: [
+                    { name: 'Ice (Gratuito)', link: 'https://github.com/jordanbaird/Ice' },
+                    { name: 'Hidden Bar', link: '#' }
+                ]
+            },
+            {
+                id: 'rectangle',
+                name: 'Rectangle Pro',
+                category: 'Produtividade',
+                icon: 'fa-table-columns',
+                website: 'https://rectangleapp.com/pro',
+                description: 'Gestão de janelas através de atalhos de teclado ou arrastando para as bordas (efeito "snap").',
+                problem: 'O macOS nativo é lento a organizar janelas lado a lado em ecrãs gigantes de forma precisa e rápida.',
+                alternatives: [
+                    { name: 'Magnet', link: '#' },
+                    { name: 'Raycast (Integrado)', link: 'https://www.raycast.com' }
+                ]
+            },
+            {
+                id: 'betterdisplay',
+                name: 'BetterDisplay',
+                category: 'Produtividade',
+                icon: 'fa-display',
+                website: 'https://github.com/waydabber/BetterDisplay',
+                description: 'Permite controlar brilho e volume de monitores externos via teclado e cria resoluções personalizadas (HiDPI).',
+                problem: 'Monitores externos muitas vezes não permitem controlar o brilho pelas teclas do Mac ou têm a escala de texto errada.',
+                alternatives: [
+                    { name: 'MonitorControl (Open Source)', link: 'https://github.com/MonitorControl/MonitorControl' }
+                ]
+            },
+            {
+                id: 'alttab',
+                name: 'AltTab',
+                category: 'Produtividade',
+                icon: 'fa-window-restore',
+                website: 'https://alt-tab-macos.netlify.app',
+                description: 'Traz o comportamento de "Alt+Tab" do Windows para o macOS, com pré-visualização das janelas.',
+                problem: 'O Cmd+Tab do Mac alterna entre Apps, não Janelas. É difícil alternar entre múltiplas janelas da mesma app.',
+                alternatives: [
+                    { name: 'Contexts', link: 'https://contexts.co' }
+                ]
+            },
+            {
+                id: 'alfred',
+                name: 'Alfred',
+                category: 'Produtividade',
+                icon: 'fa-hat-wizard',
+                website: 'https://www.alfredapp.com',
+                description: 'Substituto do Spotlight. Lança apps, procura ficheiros, executa scripts e workflows complexos.',
+                problem: 'O Spotlight é limitado para automação. O utilizador precisa de executar ações complexas sem tirar as mãos do teclado.',
+                alternatives: [
+                    { name: 'Raycast', link: 'https://www.raycast.com' }
+                ]
+            },
+            // Sistema
+            {
+                id: 'batfi',
+                name: 'BatFi',
+                category: 'Sistema',
+                icon: 'fa-battery-half',
+                website: 'https://micropixels.software/apps/batfi',
+                description: 'Limita o carregamento da bateria (ex: pára de carregar aos 80%) e monitoriza a saúde da mesma.',
+                problem: 'Manter o Mac sempre ligado à corrente a 100% degrada quimicamente a bateria rapidamente.',
+                alternatives: [
+                    { name: 'AlDente', link: 'https://apphousekitchen.com' }
+                ]
+            },
+            {
+                id: 'malwarebytes',
+                name: 'Malwarebytes',
+                category: 'Sistema',
+                icon: 'fa-shield-virus',
+                website: 'https://www.malwarebytes.com/mac',
+                description: 'Deteta e remove malware, adware e outras ameaças que escapam às defesas da Apple.',
+                problem: 'A ideia de que "Macs não têm vírus" é um mito. Adware e pop-ups intrusivos são comuns.',
+                alternatives: [
+                    { name: 'CleanMyMac', link: '#' }
+                ]
+            },
+            // Dev & Redes
+            {
+                id: 'orbstack',
+                name: 'OrbStack',
+                category: 'Dev',
+                icon: 'fa-docker',
+                website: 'https://orbstack.dev',
+                description: 'Alternativa leve e rápida ao Docker Desktop para gerir containers e máquinas virtuais Linux.',
+                problem: 'O Docker Desktop no Mac consome muitos recursos e bateria, tornando o sistema lento.',
+                alternatives: [
+                    { name: 'Docker Desktop', link: '#' },
+                    { name: 'Podman', link: '#' }
+                ]
+            },
+            {
+                id: 'iterm2',
+                name: 'iTerm2 / Ghostty',
+                category: 'Dev',
+                icon: 'fa-terminal',
+                website: 'https://iterm2.com',
+                description: 'Emuladores de terminal avançados com suporte a GPU, split panes e alta personalização.',
+                problem: 'O Terminal nativo é demasiado básico para uso profissional intensivo e gestão de múltiplos processos.',
+                alternatives: [
+                    { name: 'Warp', link: 'https://www.warp.dev' },
+                    { name: 'Alacritty', link: 'https://alacritty.org' }
+                ]
+            },
+            {
+                id: 'littlesnitch',
+                name: 'Little Snitch',
+                category: 'Dev',
+                icon: 'fa-network-wired',
+                website: 'https://www.obdev.at/products/littlesnitch/index.html',
+                description: 'Firewall de saída. Avisa e bloqueia sempre que uma app tenta ligar-se à internet.',
+                problem: 'Falta de transparência e controlo sobre quais apps estão a enviar dados privados para servidores externos.',
+                alternatives: [
+                    { name: 'LuLu (Open Source)', link: 'https://objective-see.org/products/lulu.html' }
+                ]
+            },
+            {
+                id: 'arc',
+                name: 'Arc Browser',
+                category: 'Dev',
+                icon: 'fa-chrome',
+                website: 'https://arc.net',
+                description: 'Browser baseado em Chromium que reinventa a gestão de abas com barras laterais e espaços.',
+                problem: 'O "caos das abas" nos browsers tradicionais torna difícil separar contextos de trabalho e lazer.',
+                alternatives: [
+                    { name: 'Brave', link: '#' },
+                    { name: 'SigmaOS', link: '#' }
+                ]
+            },
+            {
+                id: 'utm',
+                name: 'UTM',
+                category: 'Dev',
+                icon: 'fa-computer',
+                website: 'https://mac.getutm.app',
+                description: 'Virtualização e Emulação. Permite correr Windows 11 (ARM) ou Linux no Mac de forma nativa.',
+                problem: 'Necessidade de correr software exclusivo de Windows ou Linux sem reiniciar a máquina (Dual Boot).',
+                alternatives: [
+                    { name: 'Parallels Desktop', link: '#' },
+                    { name: 'VMware Fusion', link: '#' }
+                ]
+            },
+            {
+                id: 'fing',
+                name: 'Fing / Homedale',
+                category: 'Dev',
+                icon: 'fa-wifi',
+                website: 'https://www.fing.com/products/fing-desktop',
+                description: 'Análise de rede, descoberta de dispositivos e monitorização de sinal Wi-Fi.',
+                problem: 'Dificuldade em diagnosticar problemas de rede, lentidão de Wi-Fi ou identificar dispositivos desconhecidos.',
+                alternatives: [
+                    { name: 'WiFi Explorer', link: '#' }
+                ]
+            },
+            {
+                id: 'dbeaver',
+                name: 'dBeaver',
+                category: 'Dev',
+                icon: 'fa-database',
+                website: 'https://dbeaver.io',
+                description: 'Gestor universal de bases de dados (SQL, NoSQL) numa única interface.',
+                problem: 'Gerir múltiplos tipos de base de dados requer múltiplas ferramentas separadas e caras.',
+                alternatives: [
+                    { name: 'TablePlus', link: 'https://tableplus.com' },
+                    { name: 'DataGrip', link: '#' }
+                ]
+            },
+            // Bónus
+            {
+                id: 'homebrew',
+                name: 'Homebrew',
+                category: 'Bónus',
+                icon: 'fa-beer-mug-empty',
+                website: 'https://brew.sh',
+                description: 'O gestor de pacotes essencial para macOS. Instala apps e ferramentas via linha de comandos.',
+                problem: 'Instalar e atualizar software manualmente é lento e desorganizado. O macOS não tem um gestor nativo.',
+                alternatives: []
+            },
+            {
+                id: 'keka',
+                name: 'Keka',
+                category: 'Bónus',
+                icon: 'fa-file-zipper',
+                website: 'https://keka.io',
+                description: 'Descompactador de ficheiros robusto e rápido.',
+                problem: 'O macOS nativo não consegue abrir ficheiros comuns como .rar ou .7z.',
+                alternatives: [
+                    { name: 'The Unarchiver', link: 'https://theunarchiver.com' }
+                ]
+            },
+            {
+                id: 'raycast',
+                name: 'Raycast',
+                category: 'Bónus',
+                icon: 'fa-bolt',
+                website: 'https://www.raycast.com',
+                description: 'Lançador extensível. Substitui Spotlight, calculadoras, gestão de janelas e mais.',
+                problem: 'Necessidade de múltiplas apps pequenas (gestor de clipboard, snippets, conversor) que o Raycast centraliza.',
+                alternatives: [
+                    { name: 'Alfred', link: 'https://www.alfredapp.com' }
+                ]
+            },
+            {
+                id: 'iina',
+                name: 'IINA',
+                category: 'Bónus',
+                icon: 'fa-film',
+                website: 'https://iina.io',
+                description: 'Leitor de vídeo moderno, open-source e esteticamente integrado no macOS.',
+                problem: 'O QuickTime é limitado em formatos e o VLC tem uma interface antiquada.',
+                alternatives: [
+                    { name: 'VLC', link: '#' }
+                ]
+            },
+            {
+                id: 'shottr',
+                name: 'Shottr / CleanShot',
+                category: 'Bónus',
+                icon: 'fa-crop-simple',
+                website: 'https://shottr.cc',
+                description: 'Ferramentas de captura de ecrã com OCR, scroll capture e anotações rápidas.',
+                problem: 'As ferramentas nativas de screenshot são limitadas para anotações rápidas ou capturar páginas inteiras.',
+                alternatives: []
+            },
+            {
+                id: 'appcleaner',
+                name: 'AppCleaner',
+                category: 'Bónus',
+                icon: 'fa-trash-can',
+                website: 'https://freemacsoft.net/appcleaner',
+                description: 'Desinstalador que encontra e remove todos os ficheiros de configuração associados a uma app.',
+                problem: 'Arrastar para o lixo deixa "lixo" digital e ficheiros de configuração espalhados pelo disco.',
+                alternatives: []
+            },
+            {
+                id: 'amphetamine',
+                name: 'Amphetamine',
+                category: 'Bónus',
+                icon: 'fa-eye',
+                website: 'https://apps.apple.com/app/amphetamine/id937984704',
+                description: 'Impede o Mac de entrar em suspensão baseado em regras (ex: enquanto uma app corre).',
+                problem: 'O computador adormece a meio de downloads longos ou renderizações, interrompendo o trabalho.',
+                alternatives: []
+            },
+            {
+                id: 'stats',
+                name: 'Stats',
+                category: 'Bónus',
+                icon: 'fa-chart-line',
+                website: 'https://github.com/exelban/stats',
+                description: 'Monitor de sistema na barra de menus (CPU, RAM, SSD, Sensores).',
+                problem: 'Falta de visibilidade sobre o desempenho do hardware e temperaturas em tempo real.',
+                alternatives: [
+                    { name: 'iStat Menus', link: '#' }
+                ]
+            },
+            {
+                id: 'dropover',
+                name: 'Dropover',
+                category: 'Bónus',
+                icon: 'fa-hand-holding',
+                website: 'https://dropoverapp.com',
+                description: 'Cria uma "prateleira" temporária para arrastar ficheiros, navegar e largar no destino.',
+                problem: 'Mover ficheiros entre janelas ou pastas profundas é frustrante e propenso a erros de "drag & drop".',
+                alternatives: []
+            },
+            {
+                id: 'latest',
+                name: 'Latest',
+                category: 'Bónus',
+                icon: 'fa-arrows-rotate',
+                website: 'https://max.codes/latest',
+                description: 'Verifica atualizações para todas as apps instaladas (incluindo via Homebrew).',
+                problem: 'Apps descarregadas fora da App Store raramente notificam sobre atualizações de forma centralizada.',
+                alternatives: []
+            }
+        ];
+
+        // --- STATE & DOM ELEMENTS ---
+        let currentState = {
+            category: 'all',
+            search: '',
+            problemMode: false
+        };
+
+        const gridEl = document.getElementById('apps-grid');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const searchInput = document.getElementById('search-input');
+        const modeToggle = document.getElementById('mode-toggle');
+        const modeLabel = document.getElementById('mode-label');
+        const totalCountEl = document.getElementById('total-count');
+        const noResultsEl = document.getElementById('no-results');
+
+        // --- INITIALIZATION ---
+        function init() {
+            renderApps();
+            renderChart();
+            setupListeners();
+            totalCountEl.innerText = appsData.length;
+        }
+
+        // --- LOGIC ---
+        function setupListeners() {
+            // Filter Buttons
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // UI Update
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-stone-800', 'text-white');
+                        b.classList.add('bg-stone-100', 'text-stone-600');
+                    });
+                    btn.classList.remove('bg-stone-100', 'text-stone-600');
+                    btn.classList.add('bg-stone-800', 'text-white');
+
+                    // State Update
+                    currentState.category = btn.dataset.category;
+                    renderApps();
+                });
+            });
+
+            // Search Input
+            searchInput.addEventListener('input', (e) => {
+                currentState.search = e.target.value.toLowerCase();
+                renderApps();
+            });
+
+            // Mode Toggle
+            modeToggle.addEventListener('change', (e) => {
+                currentState.problemMode = e.target.checked;
+                modeLabel.innerText = currentState.problemMode ? 'Ver Apps' : 'Ver Soluções';
+                renderApps(); // Re-render to flip card content
+            });
+        }
+
+        function getCategoryColor(category) {
+            switch(category) {
+                case 'Produtividade': return 'bg-blue-100 text-blue-800 border-blue-200';
+                case 'Sistema': return 'bg-red-100 text-red-800 border-red-200';
+                case 'Dev': return 'bg-emerald-100 text-emerald-800 border-emerald-200';
+                case 'Bónus': return 'bg-purple-100 text-purple-800 border-purple-200';
+                default: return 'bg-gray-100 text-gray-800';
+            }
+        }
+
+        function renderApps() {
+            gridEl.innerHTML = '';
+            
+            const filtered = appsData.filter(app => {
+                const matchesCategory = currentState.category === 'all' || app.category === currentState.category;
+                const searchStr = `${app.name} ${app.description} ${app.problem}`.toLowerCase();
+                const matchesSearch = searchStr.includes(currentState.search);
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                noResultsEl.classList.remove('hidden');
+            } else {
+                noResultsEl.classList.add('hidden');
+            }
+
+            filtered.forEach(app => {
+                const card = document.createElement('div');
+                card.className = `bg-white rounded-xl border border-stone-200 p-6 flex flex-col justify-between card-hover cursor-pointer h-full relative overflow-hidden group`;
+                card.onclick = () => openModal(app);
+
+                // Content logic based on "Problem Mode"
+                const mainTitle = currentState.problemMode ? "Problema:" : app.name;
+                const mainText = currentState.problemMode ? app.problem : app.description;
+                const subText = currentState.problemMode ? `Solução: ${app.name}` : app.problem;
+                
+                // Badge
+                const catBadgeClass = getCategoryColor(app.category);
+                
+                // Icons logic
+                const iconClass = currentState.problemMode ? 'fa-triangle-exclamation text-amber-500' : `${app.icon} text-stone-700`;
+
+                card.innerHTML = `
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-stone-100 to-transparent rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 bg-stone-50 rounded-lg border border-stone-100 shadow-sm">
+                                <i class="fa-solid ${iconClass} text-xl"></i>
+                            </div>
+                            <span class="text-xs font-semibold px-2.5 py-0.5 rounded border ${catBadgeClass}">
+                                ${app.category}
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold text-stone-800 mb-2 leading-tight ${currentState.problemMode ? 'text-amber-700' : ''}">${mainTitle}</h3>
+                        
+                        <p class="text-stone-600 text-sm mb-4 line-clamp-3">
+                            ${mainText}
+                        </p>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t border-stone-100 relative z-10">
+                        ${currentState.problemMode 
+                            ? `<div class="text-sm font-semibold text-stone-800"><i class="fa-solid fa-check text-green-500 mr-2"></i>${app.name}</div>`
+                            : `<div class="text-xs text-stone-400 font-medium uppercase tracking-wide mb-1">Resolve:</div>
+                               <div class="text-xs text-stone-500 line-clamp-2 italic">"${app.problem}"</div>`
+                        }
+                    </div>
+                `;
+                gridEl.appendChild(card);
+            });
+        }
+
+        function renderChart() {
+            const ctx = document.getElementById('categoryChart').getContext('2d');
+            
+            // Calculate counts
+            const counts = {};
+            appsData.forEach(app => {
+                counts[app.category] = (counts[app.category] || 0) + 1;
+            });
+
+            const labels = Object.keys(counts);
+            const data = Object.values(counts);
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: [
+                            '#dbeafe', // Produtividade (Blue-100 equivalent, adjusted)
+                            '#fee2e2', // Sistema (Red-100)
+                            '#d1fae5', // Dev (Emerald-100)
+                            '#f3e8ff'  // Bonus (Purple-100)
+                        ],
+                        borderColor: [
+                            '#1e40af', // Blue-800
+                            '#991b1b', // Red-800
+                            '#065f46', // Emerald-800
+                            '#6b21a8'  // Purple-800
+                        ],
+                        borderWidth: 1,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    family: "'Segoe UI', sans-serif",
+                                    size: 11
+                                },
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: '#1c1917',
+                            padding: 12,
+                            cornerRadius: 8
+                        }
+                    }
+                }
+            });
+        }
+
+        // --- MODAL LOGIC ---
+        const modal = document.getElementById('app-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalProblem = document.getElementById('modal-problem');
+        const modalDesc = document.getElementById('modal-description');
+        const modalLink = document.getElementById('modal-link');
+        const modalAlts = document.getElementById('modal-alternatives');
+        const modalAltsContainer = document.getElementById('modal-alternatives-container');
+
+        function openModal(app) {
+            modalTitle.innerText = app.name;
+            modalProblem.innerText = app.problem;
+            modalDesc.innerText = app.description;
+            modalLink.href = app.website;
+            
+            modalAlts.innerHTML = '';
+            if (app.alternatives && app.alternatives.length > 0) {
+                modalAltsContainer.classList.remove('hidden');
+                app.alternatives.forEach(alt => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<span class="font-medium text-stone-700">${alt.name}</span>: <a href="${alt.link}" target="_blank" class="text-stone-400 hover:text-stone-600 underline">Link</a>`;
+                    modalAlts.appendChild(li);
+                });
+            } else {
+                modalAltsContainer.classList.add('hidden');
+            }
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // Run
+        init();
+
+    </script>
+</body>
+</html>
