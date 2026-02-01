@@ -1,0 +1,99 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+{{ partial "helpers/style-bundle.html" . }}
+
+<!--================= fab-icon =========================-->
+{{/* add favicon only if the site author has provided the the favicon */}}
+{{ if site.Params.logo.favicon }}
+  {{ $favicon := site.Params.logo.favicon }}
+
+  {{/* resize the favicon. don't resize svg because it is not supported */}}
+  {{ $favicon = resources.Get $favicon }}
+  {{ if and $favicon (ne $favicon.MediaType.SubType "svg") }}
+    {{ $favicon = $favicon.Resize "42x" }}
+  {{ end }}
+  {{ $favicon = $favicon.RelPermalink}}
+
+  <link rel="icon" type="image/png" href="{{ $favicon }}" />
+{{end}}
+
+{{ with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{ end }}
+
+{{/* ========== CUSTOM SEO ENHANCEMENTS ========== */}}
+
+{{/* JSON-LD Structured Data for Person */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "João Trigo Soares",
+  "jobTitle": "Platforms Engineering Team Lead",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "NOS Inovação",
+    "url": "https://www.nos.pt"
+  },
+  "url": "https://jtsoar.es",
+  "image": "https://jtsoar.es/images/author/avatar.jpg",
+  "email": "joao@jtsoar.es",
+  "sameAs": [
+    "https://github.com/suvl",
+    "https://linkedin.com/in/joaotrigosoares",
+    "https://twitter.com/thegreatdevop"
+  ],
+  "knowsAbout": [
+    "Kubernetes",
+    "DevOps",
+    "Cloud Native",
+    "Platform Engineering",
+    "Azure",
+    "Google Cloud",
+    "Terraform",
+    "Docker"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Certified Kubernetes Administrator (CKA)",
+      "credentialCategory": "Professional Certification"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Certified Kubernetes Application Developer (CKAD)",
+      "credentialCategory": "Professional Certification"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Certified Kubernetes Security Specialist (CKS)",
+      "credentialCategory": "Professional Certification"
+    }
+  ],
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Faculty of Engineering, University of Porto (FEUP)"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lisbon",
+    "addressCountry": "Portugal"
+  }
+}
+</script>
+
+{{/* Additional meta tags for better SEO */}}
+<meta name="author" content="João Trigo Soares">
+<meta name="keywords" content="João Trigo Soares, DevOps, Kubernetes, Platform Engineering, CKA, CKAD, CKS, Cloud Native, Azure, GCP, Terraform, Lisbon, Portugal">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{/* Twitter Card tags */}}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@thegreatdevop">
+<meta name="twitter:creator" content="@thegreatdevop">
+<meta name="twitter:title" content="{{ if .IsHome }}João Trigo Soares - Platforms Engineering Team Lead{{ else }}{{ .Title }} | João Trigo Soares{{ end }}">
+<meta name="twitter:description" content="Platforms Engineering Team Lead specializing in Kubernetes, Cloud Native, and DevOps practices. Triple Kubernetes Certified (CKA, CKAD, CKS).">
+<meta name="twitter:image" content="https://jtsoar.es/images/author/avatar.jpg">
