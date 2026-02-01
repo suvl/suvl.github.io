@@ -105,6 +105,8 @@ params:
       enable: true
     credentials:
       enable: true
+    newsletter:
+      enable: false
 
 caches:
   images:
