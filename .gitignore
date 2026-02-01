@@ -28,8 +28,8 @@ go.work
 ### Hugo ###
 # Generated files by hugo
 /public/
-/src/resources/
-/src/assets/jsconfig.json
+resources/
+assets/jsconfig.json
 hugo_stats.json
 
 # Executable may be added to repository
