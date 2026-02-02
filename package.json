@@ -56,8 +56,15 @@
     "popper.js": "^1.16.1",
     "postcss": "^8.4.41",
     "postcss-cli": "^11.0.0",
+    "puppeteer": "^23.11.1",
     "typeit": "^8.8.7"
   },
+  "scripts": {
+    "generate-resume": "node scripts/generate-resume.js"
+  },
   "name": "suvl.github.io",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "dependencies": {
+    "js-yaml": "^4.1.1"
+  }
 }

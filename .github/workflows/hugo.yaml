@@ -79,6 +79,10 @@ jobs:
         run: |
           [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true
 
+      - name: Generate PDF Resume
+        run: |
+          npm run generate-resume
+
       - name: Configure Git
         run: |
           git config core.quotepath false
