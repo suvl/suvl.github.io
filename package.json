@@ -35,7 +35,7 @@
     "@fortawesome/fontawesome-free": "^6.6.0",
     "autoprefixer": "^10.4.20",
     "bootstrap": "^5.3.3",
-    "eslint": "^9.39.2",
+    "eslint": "^10.8.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-standard": "^15.0.1",
     "eslint-plugin-import": "^2.26.0",
@@ -56,7 +56,7 @@
     "popper.js": "^1.16.1",
     "postcss": "^8.5.14",
     "postcss-cli": "^11.0.0",
-    "puppeteer": "^23.11.1",
+    "puppeteer": "^25.4.0",
     "typeit": "^8.8.7"
   },
   "scripts": {
@@ -65,6 +65,6 @@
   "name": "suvl.github.io",
   "version": "0.1.0",
   "dependencies": {
-    "js-yaml": "^4.2.0"
+    "js-yaml": "^5.2.2"
   }
 }
