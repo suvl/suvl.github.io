@@ -59,7 +59,8 @@
     "typeit": "^8.8.7"
   },
   "scripts": {
-    "generate-resume": "node scripts/generate-resume.js"
+    "generate-resume": "node scripts/generate-resume.js",
+    "test:site": "node tests/site-smoke-test.js"
   },
   "name": "suvl.github.io",
   "version": "0.1.0",

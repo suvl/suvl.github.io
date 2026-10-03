@@ -63,3 +63,16 @@ jobs:
 
       - name: Build the site
         run: hugo --gc --minify --cacheDir "${{ runner.temp }}/hugo_cache"
+
+      - name: Test the rendered site
+        run: npm run test:site
+        env:
+          SITE_TEST_RESULTS_DIR: ${{ runner.temp }}/site-test-results
+
+      - name: Upload browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: site-rendered-screenshots
+          path: ${{ runner.temp }}/site-test-results/
+          if-no-files-found: ignore
