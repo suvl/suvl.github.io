@@ -64,6 +64,6 @@
   "name": "suvl.github.io",
   "version": "0.1.0",
   "dependencies": {
-    "js-yaml": "^5.2.2"
+    "js-yaml": "^5.4.1"
   }
 }
