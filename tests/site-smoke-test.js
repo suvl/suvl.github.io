@@ -110,16 +110,42 @@ async function main() {
 
     await page.setViewport({ width: 390, height: 844 });
     await page.reload({ waitUntil: 'networkidle2' });
-    const mobile = await page.evaluate(() => ({
-      viewportWidth: window.innerWidth,
-      documentWidth: document.documentElement.scrollWidth,
-      documentHeight: document.documentElement.scrollHeight
-    }));
+    const mobile = await page.evaluate(() => {
+      const overflowingElements = [...document.body.querySelectorAll('*')]
+        .map(element => {
+          const rect = element.getBoundingClientRect();
+          return {
+            element: element.tagName.toLowerCase(),
+            id: element.id,
+            className: typeof element.className === 'string' ? element.className : '',
+            left: Math.round(rect.left),
+            right: Math.round(rect.right),
+            width: Math.round(rect.width),
+            scrollWidth: element.scrollWidth,
+            clientWidth: element.clientWidth
+          };
+        })
+        .filter(element => element.right > window.innerWidth + 1)
+        .sort((a, b) => b.right - a.right)
+        .slice(0, 15);
+
+      return {
+        viewportWidth: window.innerWidth,
+        documentWidth: document.documentElement.scrollWidth,
+        bodyWidth: document.body.scrollWidth,
+        documentHeight: document.documentElement.scrollHeight,
+        overflowingElements
+      };
+    });
+    await page.screenshot({ path: path.join(resultsDir, 'mobile.png'), fullPage: true });
+    console.log(`Mobile layout diagnostics: ${JSON.stringify(mobile)}`);
     assert.ok(mobile.documentHeight > 0, 'The mobile page has no rendered content');
-    assert.ok(mobile.documentWidth <= mobile.viewportWidth + 1, 'Mobile layout overflows horizontally');
+    assert.ok(
+      mobile.documentWidth <= mobile.viewportWidth + 1,
+      `Mobile layout overflows horizontally (${mobile.documentWidth}px document, ${mobile.viewportWidth}px viewport)`
+    );
     assert.deepEqual(pageErrors, [], `The page raised JavaScript errors: ${pageErrors.join('; ')}`);
     assert.deepEqual(failedAssets, [], `The page failed to load local assets: ${failedAssets.join('; ')}`);
-    await page.screenshot({ path: path.join(resultsDir, 'mobile.png'), fullPage: true });
 
     console.log(`Site smoke test passed at desktop (${desktop.viewportWidth}px) and mobile (${mobile.viewportWidth}px).`);
     console.log(`Screenshots saved to ${resultsDir}`);
