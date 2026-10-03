@@ -59,13 +59,20 @@ async function main() {
 
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   const address = server.address();
-  const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
-
+  let browser;
   try {
+    browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
     const page = await browser.newPage();
     await page.setViewport({ width: 1440, height: 1000 });
     const pageErrors = [];
+    const failedAssets = [];
     page.on('pageerror', error => pageErrors.push(error.message));
+    page.on('response', response => {
+      const url = new URL(response.url());
+      if (url.host === `127.0.0.1:${address.port}` && response.status() >= 400 && url.pathname !== '/favicon.ico') {
+        failedAssets.push(`${response.status()} ${url.pathname}`);
+      }
+    });
 
     const response = await page.goto(`http://127.0.0.1:${address.port}/`, { waitUntil: 'networkidle2' });
     assert.equal(response.status(), 200, 'Home page did not return HTTP 200');
@@ -111,12 +118,13 @@ async function main() {
     assert.ok(mobile.documentHeight > 0, 'The mobile page has no rendered content');
     assert.ok(mobile.documentWidth <= mobile.viewportWidth + 1, 'Mobile layout overflows horizontally');
     assert.deepEqual(pageErrors, [], `The page raised JavaScript errors: ${pageErrors.join('; ')}`);
+    assert.deepEqual(failedAssets, [], `The page failed to load local assets: ${failedAssets.join('; ')}`);
     await page.screenshot({ path: path.join(resultsDir, 'mobile.png'), fullPage: true });
 
     console.log(`Site smoke test passed at desktop (${desktop.viewportWidth}px) and mobile (${mobile.viewportWidth}px).`);
     console.log(`Screenshots saved to ${resultsDir}`);
   } finally {
-    await browser.close();
+    await browser?.close();
     await new Promise((resolve, reject) => server.close(error => error ? reject(error) : resolve()));
   }
 }
