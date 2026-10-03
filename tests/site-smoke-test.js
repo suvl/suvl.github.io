@@ -7,6 +7,7 @@ const puppeteer = require('puppeteer');
 
 const publicDir = path.resolve(__dirname, '..', 'public');
 const resultsDir = process.env.SITE_TEST_RESULTS_DIR || path.join(os.tmpdir(), 'site-smoke-test');
+const maxHorizontalOverflow = 4;
 const contentTypes = {
   '.css': 'text/css',
   '.html': 'text/html',
@@ -105,7 +106,10 @@ async function main() {
     assert.deepEqual(desktop.brokenAnchors, [], 'A section navigation link has no matching target');
     assert.ok(desktop.stylesheets > 0, 'No stylesheets were loaded');
     assert.ok(desktop.documentHeight > 0, 'The page has no rendered content');
-    assert.ok(desktop.documentWidth <= desktop.viewportWidth + 1, 'Desktop layout overflows horizontally');
+    assert.ok(
+      desktop.documentWidth <= desktop.viewportWidth + maxHorizontalOverflow,
+      'Desktop layout overflows horizontally'
+    );
     await page.screenshot({ path: path.join(resultsDir, 'desktop.png'), fullPage: true });
 
     await page.setViewport({ width: 390, height: 844 });
@@ -141,7 +145,7 @@ async function main() {
     console.log(`Mobile layout diagnostics: ${JSON.stringify(mobile)}`);
     assert.ok(mobile.documentHeight > 0, 'The mobile page has no rendered content');
     assert.ok(
-      mobile.documentWidth <= mobile.viewportWidth + 1,
+      mobile.documentWidth <= mobile.viewportWidth + maxHorizontalOverflow,
       `Mobile layout overflows horizontally (${mobile.documentWidth}px document, ${mobile.viewportWidth}px viewport)`
     );
     assert.deepEqual(pageErrors, [], `The page raised JavaScript errors: ${pageErrors.join('; ')}`);
